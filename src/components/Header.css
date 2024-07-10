@@ -1,5 +1,5 @@
 .Header {
-  background-image: url('../assests/Header-bg.png'); /* Corrected the spelling of 'assets' */
+  background-image: url('../assests/Header-bg.png'); 
   background-size: cover; /* Changed to 'cover' to maintain aspect ratio */
   background-position: center; /* Center the background image */
   width: 100%;
