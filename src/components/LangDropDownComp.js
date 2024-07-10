@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+// import "../styles/languageDropDown.scss";
 import './LangDropDown.css';
 
-const LangDropDownComp = ({ selectedLanguage, changeLanguage }) => {
+const LanguageDropdown = (props) => {
+  const { selectedLanguage, changeLanguage } = props;
   const [isOpen, setIsOpen] = useState(false);
   const languageOptions = ["English", "Hinglish"];
 
@@ -15,8 +17,8 @@ const LangDropDownComp = ({ selectedLanguage, changeLanguage }) => {
   };
 
   return (
-    <div className="dropdown-container">
-      <div onClick={toggleDropdown} className={`dropdown-box ${isOpen ? "open" : ""}`}>
+    <div onClick={toggleDropdown} className="dropDownWrap">
+      <div className={`dropdown-box ${isOpen ? "open" : ""}`}>
         <div className="selected-language">
           {languageOptions[selectedLanguage]}
         </div>
@@ -42,4 +44,4 @@ const LangDropDownComp = ({ selectedLanguage, changeLanguage }) => {
   );
 };
 
-export default LangDropDownComp;
+export default LanguageDropdown;
