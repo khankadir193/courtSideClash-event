@@ -11,13 +11,17 @@ const HeaderComp = () => {
     setShowGuide(!showGuide);
   };
 
+  const closeGuide = () => {
+    setShowGuide(false);
+  };
+
   return (
     <div className='Header'>
       <LangDropDownComp />
       <button onClick={toggleGuide}>
         <img src={infoLangMark} alt='infoLangMark' />
       </button>
-      {showGuide && <Guide />} {/* Conditionally render the Guide component */}
+      {showGuide && <Guide onClose={closeGuide} />} {/* Conditionally render the Guide component */}
     </div>
   );
 };
