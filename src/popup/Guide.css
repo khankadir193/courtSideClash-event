@@ -1,0 +1,18 @@
+.Guide {
+  position: absolute;
+  top: 50px; /* Adjust based on your layout */
+  right: 10px;
+  width: 300px; /* Adjust based on your design */
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.Guide h3 {
+  margin-top: 0;
+}
+
+.Guide p {
+  margin: 0;
+}
