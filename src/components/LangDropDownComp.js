@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 // import "../styles/languageDropDown.scss";
+import './LangDropDown.css';
 
 const LangDropDownComp = (props) => {
   const { selectedLanguage, changeLanguage } = props;
