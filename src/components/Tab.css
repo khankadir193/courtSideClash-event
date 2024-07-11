@@ -1,0 +1,21 @@
+/* styles.css */
+.tab-container {
+  text-align: center;
+  width: 100%;
+  height: 10vh;
+  margin-top: 10rem;
+}
+
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0 10px;
+  width: 40px;
+  /* margin-top: 3rem; */
+}
+
+button img {
+  width: 50px; /* Adjust the size as needed */
+  cursor: pointer;
+}

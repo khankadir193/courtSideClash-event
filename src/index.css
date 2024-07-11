@@ -12,6 +12,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: url("./assests/bg.jpg") center/100% 100% no-repeat;
+  height: auto;
+  width: 100%;
 }
 
 code {
