@@ -4,7 +4,7 @@ import HeaderComp from './components/HeaderComp';
 
 function App() {
   return (
-    <div className='AppContainer'>
+    <div>
       <HeaderComp />
     </div>
   );
