@@ -34,8 +34,6 @@ const TabComponent = () => {
           />
         </button>
       </div>
-
-      
       <div>
         {renderComponent()}
       </div>

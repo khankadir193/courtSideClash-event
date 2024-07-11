@@ -1,0 +1,43 @@
+
+.user-container {
+  display: flex;
+  justify-content: center; /* Center the sub-container */
+  padding: 10px;
+  background: url('../assests/Daily-weekly-btn.png');
+  background-size: 100% 100%;
+  width: 100%;
+  height: 10vh;
+  position: relative;
+  top: 3rem;
+}
+
+.user-sub-container {
+  display: flex;
+  gap: 10px; /* Space between buttons */
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 3rem;
+}
+
+button {
+  flex: 1; /* Equal size for all buttons */
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  width: 40%;
+}
+
+button img {
+  width: 100%; /* Make the image fill the button */
+  height: auto;
+}
+
+
+
+
+
+
+
+
