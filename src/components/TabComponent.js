@@ -20,20 +20,22 @@ const TabComponent = () => {
 
   return (
     <div className='tab-container'>
-      <div>
-        <button onClick={() => setActiveTab('user')}>
+      <div className='main-tabs'>
+        <button className='user' onClick={() => setActiveTab('user')}>
           <img
             src={activeTab === 'user' ? userSelected : userUnSelected}
             alt='User Tab'
           />
         </button>
-        <button onClick={() => setActiveTab('talent')}>
+        <button className='talent' onClick={() => setActiveTab('talent')}>
           <img
             src={activeTab === 'talent' ? talentSelected : talentUnSelected}
             alt='Talent Tab'
           />
         </button>
       </div>
+
+      
       <div>
         {renderComponent()}
       </div>
