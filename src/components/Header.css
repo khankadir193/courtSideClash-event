@@ -37,6 +37,30 @@ button img {
   height: 20px;
 }
 
+
+/* --- Chances Container --- */
+
+.chance-container{
+  position: absolute;
+  display: flex;
+  width: 98%;
+  left: 0;
+  right: 0;
+  height: 50px;
+  justify-content: space-between;
+  margin: auto;
+  top: 79.5%;
+}
+.throws-left{
+  background: url("../assests/throws-left.png") center / 100% 100% no-repeat;
+  height: 60px;
+  flex: 0 1 40%;
+}
+.chances{
+  background: url("../assests/throws-sent.png") center / 100% 100% no-repeat;
+  height: 60px;
+  flex: 0 1 40%;
+}
 /* Additional styling for the Guide component */
 .Guide {
   position: absolute;

@@ -18,18 +18,22 @@ const HeaderComp = () => {
   return (
     <div className='Header'>
       <LangDropDownComp />
+      {/* chances section */}
+
+      <div className='chance-container'>
+          <div className='throws-left'>
+
+          </div>
+          <div className='chances'>
+            
+          </div>
+      </div>
+
+
       <button onClick={toggleGuide}>
         <img src={infoLangMark} alt='infoLangMark' />
       </button>
       {showGuide && <Guide onClose={closeGuide} />} {/* Conditionally render the Guide component */}
-      <div className='chance-container'>
-          <div className='throws-left'>
-            Throws Left:{}
-          </div>
-          <div className='throws-sent'>
-
-          </div>
-        </div>
     </div>
   );
 };
