@@ -17,7 +17,7 @@ const HeaderComp = () => {
 
   return (
     <div className='Header'>
-      <LangDropDownComp />
+      {/* <LangDropDownComp /> */}
       <button onClick={toggleGuide}>
         <img src={infoLangMark} alt='infoLangMark' />
       </button>

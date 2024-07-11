@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 import HeaderComp from './components/HeaderComp';
 
@@ -12,3 +12,4 @@ function App() {
 }
 
 export default App;
+
