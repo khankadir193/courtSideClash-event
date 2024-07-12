@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-// import RewardsSlider from "../../components/RewardsSlider";
+import RewardsSlider from "./RewardSlider";
 // import LeaderboardComponent from "../../components/LeaderboardComponent";
-// import { userOverall, userWeekly } from "../../api";
+import { userOverall, userWeekly } from '../ApiCall/ApiComp'
 import Daily from "./Daily";
 import './User.css'
 
@@ -86,8 +86,8 @@ const UserSection = () => {
           </p>
         ) : rewTabs.weekly ? (
           <>
-            {/* <RewardsSlider rewards={userWeekly} showRanks={true}/> */}
-            <Daily />
+            <RewardsSlider rewards={userWeekly} showRanks={true}/>
+            {/* <Daily /> */}
           </>
         ) : (
           <>

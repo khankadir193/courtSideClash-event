@@ -1,0 +1,112 @@
+.slider2 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 65vw;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+  position: relative;
+}
+
+.slider2 .rewards-title {
+  position: absolute;
+  width: 33vw;
+  top: -10vw;
+}
+
+.slider2 .rewards-text {
+  width: 30vw;
+  position: absolute;
+  top: 2vw;
+}
+
+.slider2 .left-arrow {
+  width: 4vw;
+  position: relative;
+  left: 2vw;
+  top: -7vw;
+  transform: rotate(180deg);
+}
+
+.slider2 .right-arrow {
+  width: 4vw;
+  position: relative;
+  right: 3vw;
+  top: -7vw;
+}
+
+.slider2 .slider-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  gap: 1vw;
+}
+
+.slider2 .slider-content .rank-bg {
+  position: absolute;
+  top: 7vw;
+  font-size: 3.5vw;
+  font-family: TangoSans_Italic;
+}
+
+.slider2 .slider-content .rank-text {
+  font-size: 5vw;
+}
+
+.slider2 .slider-content .rew-container {
+  display: flex;
+  justify-content: center;
+}
+
+.slider2 .slider-content .rew-container .reward-item {
+  display: flex;
+  flex-direction: column;
+  width: 31vw;
+  background-size: 100% 100%;
+  align-items: center;
+}
+
+.slider2 .slider-content .rew-container .reward-item .image-div {
+  position: relative;
+}
+
+.slider2 .slider-content .rew-container .reward-item .reward-img {
+  width: 20vw;
+  position: relative;
+}
+
+.slider2 .slider-content .rew-container .reward-item .rew-desc {
+  position: relative;
+  font-size: 2.6vw;
+  color: white;
+  background-size: 100% 100%;
+  height: 15vw;
+  width: 29vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: TangoSans_Italic;
+  text-align: center;
+}
+
+.slider2 .indicators {
+  display: flex;
+  gap: 1vw;
+  position: relative;
+  top: -6vw;
+}
+
+.slider2 .indicators .slider-dot {
+  width: 2vw;
+  height: 2vw;
+  border-radius: 100%;
+  background-color: gray;
+}
+
+.slider2 .indicators .active-dot {
+  background-color: white !important;
+}
