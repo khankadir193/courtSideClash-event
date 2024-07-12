@@ -1,53 +1,37 @@
-
-.user-container {
-  display: flex;
-  justify-content: center; /* Center the sub-container */
-  padding: 10px;
-  /* background: url('../assests/Daily-weekly-btn.png'); */
-  background-size: 100% 100%;
-  width: 100%;
-  /* height: 10vh; */
-  position: relative;
-  top: 3rem;
+.user-sec .rew-tabs {
+    background-image: url('../assests/Daily-weekly-btn.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    height: 10vw;
+    margin: 4vw auto 0;
+    width: 90%;
 }
 
-.btn-img{
-  display: flex;
-  justify-content: flex-end;
-  margin: 0 auto;
+.user-sec .rew-tabs .daily {
+    background-image: url('../assests/Daily-btn.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 11vw;
+    width: 31vw;
 }
 
-.btn-img img{
-  width: 100%;
+.user-sec .rew-tabs .weekly {
+    background-image: url('../assests/Weekly-btn.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 11vw;
+    width: 31vw;
 }
 
-.user-sub-container {
-  display: flex;
-  gap: 10px; /* Space between buttons */
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  right: 3rem;
+.user-sec .rew-tabs .overall {
+    background-image: url('../assests/Overall-btn.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 11vw;
+    width: 30vw;
 }
 
-button {
-  flex: 1; /* Equal size for all buttons */
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  width: 40%;
+.hide {
+    opacity: 0;
 }
-
-button img {
-  width: 100%; /* Make the image fill the button */
-  height: auto;
-}
-
-
-
-
-
-
-
-
