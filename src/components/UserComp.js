@@ -91,7 +91,7 @@ const UserSection = () => {
           </>
         ) : (
           <>
-            {/* <RewardsSlider rewards={userOverall} showRanks={true} /> */}
+            <RewardsSlider rewards={userOverall} showRanks={true} />
             <Daily />
           </>
         )}
