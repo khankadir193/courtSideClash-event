@@ -32,6 +32,29 @@
     width: 30vw;
 }
 
+.user-sec .rewards {
+    align-items: center;
+    background-image: url('../assests/Rewards-bg.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    height: 65vw;
+    justify-content: center;
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+}
+
+.user-sec .rewards .static-rew {
+    align-items: center;
+    color: #fff;
+    display: flex;
+    font-size: 3vw;
+    justify-content: center;
+    line-height: 1.4;
+    width: 80%;
+}
+
 .hide {
     opacity: 0;
 }
