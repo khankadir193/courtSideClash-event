@@ -3,12 +3,22 @@
   display: flex;
   justify-content: center; /* Center the sub-container */
   padding: 10px;
-  background: url('../assests/Daily-weekly-btn.png');
+  /* background: url('../assests/Daily-weekly-btn.png'); */
   background-size: 100% 100%;
   width: 100%;
-  height: 10vh;
+  /* height: 10vh; */
   position: relative;
   top: 3rem;
+}
+
+.btn-img{
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 auto;
+}
+
+.btn-img img{
+  width: 100%;
 }
 
 .user-sub-container {

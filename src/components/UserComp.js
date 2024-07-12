@@ -10,6 +10,9 @@ import overAll from '../assests/Overall-btn.png';
 const UserComp = () => {
   return (
     <div className='user-container'>
+        <button className='btn-img'>
+          <img src={dailyWeeklyBtn} alt='dailyWeeklyBtn' />
+        </button>  
       <div className='user-sub-container'>
         <button>
           <img src={dailyBtn} alt='dailyWeeklyBtn' />
