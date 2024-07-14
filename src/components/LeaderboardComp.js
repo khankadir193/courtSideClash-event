@@ -19,8 +19,9 @@ const LeaderboardComp = ({ isTalent, selTabs }) => {
     cuurent: true,
     prev: false,
   });
-  // const { lbData } = useContext(AppContext);
-  // const { lbData } = useApi();
+
+  const { lbData } = useApi();
+
   const {
     talentOverall,
     talentWeekly,
@@ -34,9 +35,11 @@ const LeaderboardComp = ({ isTalent, selTabs }) => {
     userWeeklyPrev,
     userDailyPrev,
     weeklyTeamUserRanking,
-    overallTeamUsersRanking,
-    lbData
-  } = useApi();
+    overallTeamUsersRanking
+  } = lbData;
+
+  console.log('talenOverAll...',talentOverall);
+
 
   const [selectedData, setSelectedData] = useState([]);
 
