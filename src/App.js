@@ -3,20 +3,25 @@ import './App.css';
 import HeaderComp from './components/HeaderComp';
 import UserComp from './components/UserComp';
 import TabComponent from './components/TabComponent';
+import AppContext from './ApiCall/AppContext';
+// const { getTalentWeeklyPrev,lbData } = useApi();
 
-export const AppContext = createContext();
 
 function App() {
   return (
-    <AppContext.Provider>
       <div>
         <HeaderComp />
         <TabComponent />
+      {/* <pre>{JSON.stringify(lbData, null, 2)}</pre> */}
+
       </div>
-    </AppContext.Provider>
 
   );
 }
 
-export default App;
+export default () => (
+  <AppContext>
+    <App />
+  </AppContext>
+);
 

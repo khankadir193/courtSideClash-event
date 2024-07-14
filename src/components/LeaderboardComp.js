@@ -11,13 +11,16 @@ import {
   userWeekly,
 } from "../ApiCall/ApiComp";
 import { AppContext } from "../App";
+import { useApi } from "../ApiCall/AppContext";
+// import { useApi } from "../ApiCall/AppContext";
 
 const LeaderboardComp = ({ isTalent, selTabs }) => {
   const [tabs, setTabs] = useState({
     cuurent: true,
     prev: false,
   });
-  const { lbData } = useContext(AppContext);
+  // const { lbData } = useContext(AppContext);
+  // const { lbData } = useApi();
   const {
     talentOverall,
     talentWeekly,
@@ -32,7 +35,8 @@ const LeaderboardComp = ({ isTalent, selTabs }) => {
     userDailyPrev,
     weeklyTeamUserRanking,
     overallTeamUsersRanking,
-  } = lbData;
+    lbData
+  } = useApi();
 
   const [selectedData, setSelectedData] = useState([]);
 

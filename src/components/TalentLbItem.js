@@ -9,17 +9,20 @@ import { rewGet } from "../ApiCall/imageContext";
 import scoreIcon from "../assests/score-icon.png";
 import teamFrame from "../assests/Team-1.png";
 import { milestoneRankingData } from "../ApiCall/ApiComp";
+import { useApi } from "../ApiCall/AppContext";
 // import Teams from "../popups/Teams";
-import { AppContext } from "../App";
+// import { AppContext } from "../App";
 
 const TalentLbItem = ({ user, index, isTalent, showTeams, isOverall }) => {
   const [showTeamsPopup, setShowTeamsPopup] = useState(false);
-  const { lbData } = useContext(AppContext);
+  // const { lbData } = useContext(AppContext);
+  // const { lbData } = useApi();
   const {
     weeklyTeamUserRanking,
 
     overallTeamUsersRanking,
-  } = lbData;
+    lbData
+  } = useApi();
   const [selectedData, setSelectedData] = useState([]);
   const togglePopup = () => {
     setShowTeamsPopup((prev) => !prev);
