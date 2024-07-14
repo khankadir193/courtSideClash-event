@@ -7,8 +7,6 @@ const baseUrl = "http://test.streamkar.tv";
 // Custom hook to use the context
 export const useApi = () => useContext(ApiContext);
 
-
-
 // AppContext component
 const AppContext = ({ children }) => {
   const [lbData, setLbData] = useState({
@@ -28,62 +26,61 @@ const AppContext = ({ children }) => {
   });
 
   const date = new Date();
+  const day = date.getUTCDate().toString().padStart(2, '0');
+  const months = (date.getUTCMonth() + 1).toString().padStart(2, '0');
+  const years = date.getUTCFullYear();
+  const dateStr = `${years}-${months}-${day}`;
 
-  let day = date.getUTCDate();
+  const fetchData = async (url, key) => {
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      setLbData(prevState => ({
+        ...prevState,
+        [key]: data?.data?.list || [],
+      }));
+    } catch (error) {
+      console.error(`Failed to fetch ${key}:`, error);
+    }
+  };
 
-  let months = date.getUTCMonth() + 1;
-  let years = date.getUTCFullYear();
+  const getTalentWeeklyPrev = (weekIndex) => {
+    fetchData(`${baseUrl}/api/activity/eidF/getLeaderboardInfoV2?dayIndex=${weekIndex - 1}&eventDesc=20240726_court&rankIndex=12&pageNum=1&pageSize=20`, 'talenWeeklyPrev');
+  };
 
-  day = day < 10 ? `0${day}` : day;
-  months = months < 10 ? `0${months}` : months;
-  let dateStr = years + "-" + months + "-" + day;
+  const getTalentDailyPrev = () => {
+    fetchData(`${baseUrl}/api/activity/eidF/getLeaderboardInfoV2?dayIndex=${dateStr}&eventDesc=20240726_court&rankIndex=18&pageNum=1&pageSize=20`, 'talenDailyPrev');
+  };
 
-  async function getTalentWeeklyPrev(weekIndex) {
-    await fetch(
-      `${baseUrl}/api/activity/eidF/getLeaderboardInfoV2?dayIndex=${weekIndex - 1
-      }&eventDesc=20240726_court&rankIndex=12&pageNum=1&pageSize=20`
-    )
+  const getTalentOverall = () => {
+    fetchData(`${baseUrl}/api/activity/eidF/getLeaderboardInfoV2?dayIndex=${dateStr}&eventDesc=20240726_court&rankIndex=11&pageNum=1&pageSize=20`, 'talentOverall');
+  };
+
+  function getWeeklyUserPrev(weekIndex) {
+    //this api is wrong/dummy api for testing
+    fetch('http://test.streamkar.tv/api/activity/eidF/getLeaderboardInfoV2?dayIndex=2024-07-14&eventDesc=20240726_court&rankIndex=11&pageNum=1&pageSize=20')
       .then((res) => res.json())
       .then((res) => {
         setLbData((prevState) => ({
           ...prevState,
-          talenWeeklyPrev: res?.data?.list,
+          userWeeklyPrev: res?.data?.list,
         }));
       });
   }
 
-  async function getTalentDailyPrev() {
-    await fetch(
-      `${baseUrl}/api/activity/eidF/getLeaderboardInfoV2?dayIndex=${dateStr}&eventDesc=20240726_court&rankIndex=18&pageNum=1&pageSize=20`
-    )
-      .then((res) => res.json())
-      .then((res) => {
-        setLbData((prevState) => ({
-          ...prevState,
-          talenDailyPrev: res?.data?.list,
-        }));
-      });
-  }
+  useEffect(() => {
+    getTalentWeeklyPrev(1); // example weekIndex
+    getTalentDailyPrev();
+    getTalentOverall();
+    getWeeklyUserPrev(1);
+  }, [0]);
 
-  async function getTalentOverall() {
-    await fetch(
-      `${baseUrl}/api/activity/eidF/getLeaderboardInfoV2?dayIndex=${dateStr}&eventDesc=20240726_court&rankIndex=11&pageNum=1&pageSize=20`
-    )
-      .then((res) => res.json())
-      .then((res) => {
-        setLbData((prevState) => ({
-          ...prevState,
-          talentOverall: res?.data?.list,
-        }));
-      });
-  }
-
-  // Value to be passed to provider
   const value = {
     getTalentWeeklyPrev,
     lbData,
     getTalentDailyPrev,
-    getTalentOverall
+    getTalentOverall,
+    getWeeklyUserPrev
   };
 
   return <ApiContext.Provider value={value}>{children}</ApiContext.Provider>;

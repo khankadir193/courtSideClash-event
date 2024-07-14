@@ -39,6 +39,8 @@ const LeaderboardComp = ({ isTalent, selTabs }) => {
   } = lbData;
 
   console.log('talenOverAll...',talentOverall);
+  console.log('userWeeklyPrev...',userWeeklyPrev);
+
 
 
   const [selectedData, setSelectedData] = useState([]);
