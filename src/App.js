@@ -1,15 +1,20 @@
-import React from 'react';
+import React, { useState, useEffect, createContext, } from 'react';
 import './App.css';
 import HeaderComp from './components/HeaderComp';
 import UserComp from './components/UserComp';
 import TabComponent from './components/TabComponent';
 
+export const AppContext = createContext();
+
 function App() {
   return (
-    <div>
-      <HeaderComp />
-      <TabComponent />
-    </div>
+    <AppContext.Provider>
+      <div>
+        <HeaderComp />
+        <TabComponent />
+      </div>
+    </AppContext.Provider>
+
   );
 }
 

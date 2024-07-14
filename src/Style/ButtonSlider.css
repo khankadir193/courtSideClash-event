@@ -1,0 +1,67 @@
+/* @import "../converter"; */
+
+.slider {
+  width: 34vw;
+  height: 7vw;
+  border-radius: calcView(16);
+  position: relative;
+  cursor: pointer;
+  background-image: url("../assests/Rewards-bg.png");
+  /* background-image: url("../assets//images/rewards-slide-bg.png"); */
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  margin: 4vw auto 0;
+}
+
+.slider-button {
+  width: 50%;
+  height: 7vw;
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.2s;
+  background-image: url("../assests/current-btn.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  border: none;
+  font-family: "HiJack";
+  font-size: 2.7vw;
+}
+
+.mt1 {
+  margin-top: 1vw;
+}
+
+.mt4 {
+  margin-top: 4vw;
+}
+
+.slider-button.on {
+  transform: translateX(18vw);
+}
+
+.slider-handle {
+  width: 50%;
+  height: 6vw;
+  position: absolute;
+  top: 4px;
+  transition: transform 0.2s;
+}
+
+.slider-button.on .slider-handle {
+  transform: translateX(4px);
+  background-color: #fff;
+}
+
+.slider-button.off .slider-handle {
+  transform: translateX(0);
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
+}

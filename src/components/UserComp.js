@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import RewardsSlider from "./RewardSlider";
-// import LeaderboardComponent from "../../components/LeaderboardComponent";
+import LeaderboardComponent from "./LeaderboardComp";
 import { userOverall, userWeekly } from '../ApiCall/ApiComp'
 import Daily from "./Daily";
 import './User.css'
@@ -87,12 +87,10 @@ const UserSection = () => {
         ) : rewTabs.weekly ? (
           <>
             <RewardsSlider rewards={userWeekly} showRanks={true}/>
-            {/* <Daily /> */}
           </>
         ) : (
           <>
             <RewardsSlider rewards={userOverall} showRanks={true} />
-            <Daily />
           </>
         )}
       </div>
@@ -112,7 +110,7 @@ const UserSection = () => {
           onClick={() => toggleLbTabs("overall")}
         />
       </div>
-      {/* <LeaderboardComponent isTalent={false} selTabs={lbTabs} /> */}
+      <LeaderboardComponent isTalent={false} selTabs={lbTabs} />
     </div>
   );
 };
