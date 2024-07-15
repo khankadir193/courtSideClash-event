@@ -93,6 +93,9 @@ button img {
 .chances input::placeholder{
   color:slategrey;
 }
+.chances :focus::placeholder {
+  color: transparent;
+}
 /* Additional styling for the Guide component */
 .Guide {
   position: absolute;
