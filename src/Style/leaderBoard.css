@@ -1,0 +1,163 @@
+.lb-comp {
+  background-image: url('../assests/Leaderboard-bg.png');
+  width: 95%;
+  min-height: 106vw;
+  background-size: 100% 100%;
+  margin: 31vw auto 0 auto;
+  position: relative;
+}
+
+.lb-comp .banner {
+  width: 80%;
+  height: 30vw;
+  background-image: url('../assests/Beans-pot-banner.png');
+  background-size: 100% 100%;
+  margin: 0 auto;
+  position: relative;
+  top: -16vw;
+  margin-top: -16vw;
+}
+
+.lb-comp .switch-div {
+  position: relative;
+  top: -17vw;
+}
+
+.lb-comp .winners {
+  position: relative;
+  top: -13vw;
+  height: 150vw;
+  overflow: hidden;
+}
+
+.lb-comp .talentLb-item {
+  background-image: url('../assests/Leaderboard-strip.png');
+  height: 15vw;
+  background-size: 100% 100%;
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.lb-comp .talentLb-item .left-div {
+  .index {
+    position: relative;
+    top: 12vw;
+    left: 1vw;
+    font-size: 2vw;
+  }
+  .user-images {
+    position: relative;
+    top: -4vw;
+  }
+  .user-images .frame {
+    position: absolute;
+    width: 17vw;
+    z-index: 1;
+  }
+  .user-images .user-img {
+    position: absolute;
+    width: 10vw;
+    left: 4vw;
+    top: 4vw;
+    border-radius: 50%;
+  }
+  .nameNLevel {
+    position: relative;
+    left: 17vw;
+    display: flex;
+    flex-direction: column;
+    top: 2vw;
+  }
+  .nameNLevel img {
+    width: 13vw;
+  }
+  .nameNLevel .name {
+    font-size: 3vw;
+    color: black;
+    width: 20vw;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+}
+
+.lb-comp .talentLb-item .middle-div {
+  .teams-area {
+    position: relative;
+    top: 3vw;
+    left: -3vw;
+  }
+  .teams-area .team-user {
+    position: relative;
+  }
+  .teams-area .team-user .team-frame {
+    width: 8vw;
+    position: absolute;
+    z-index: 1;
+  }
+  .teams-area .team-user .user-portrait {
+    width: 8vw;
+    position: absolute;
+    border-radius: 50%;
+  }
+  .teams-area .index-1 {
+    position: relative;
+    left: -9vw;
+  }
+  .teams-area .index-2 {
+    left: -4vw;
+    z-index: 1;
+  }
+  .teams-area .index-3 {
+    left: 1vw;
+  }
+}
+
+.lb-comp .talentLb-item .right-div {
+  position: relative;
+  left: -10vw;
+  top: 0vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lb-comp .talentLb-item .right-div img {
+  width: 5vw;
+}
+
+.lb-comp .talentLb-item .right-div span {
+  font-size: 2vw;
+}
+
+.lb-comp .seeMore {
+  width: 17vw;
+  height: 7vw;
+  background-image: url("../assests/See-more-btn.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  position: absolute;
+  bottom: 7vw;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: transparent;
+  border: none;
+}
+
+.lb-comp .seeLess {
+  width: 17vw;
+  height: 7vw;
+  background-image: url("../assests/See-less-btn.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  position: absolute;
+  bottom: 7vw;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: transparent;
+  border: none;
+}
