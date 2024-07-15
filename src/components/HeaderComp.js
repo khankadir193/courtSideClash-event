@@ -22,10 +22,12 @@ const HeaderComp = () => {
 
       <div className='chance-container'>
           <div className='throws-left'>
-
+            <span>Throw Left :</span>
+            <span>99</span>
           </div>
           <div className='chances'>
-            
+          <span>Chances :</span>
+          <input type='number' max="999" placeholder='TYPE HERE'/>
           </div>
       </div>
 
