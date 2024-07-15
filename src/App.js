@@ -1,4 +1,4 @@
-import React, { useState, useEffect, createContext, } from 'react';
+import React from 'react';
 import './App.css';
 import HeaderComp from './components/HeaderComp';
 import UserComp from './components/UserComp';
@@ -9,7 +9,7 @@ import AppContext from './ApiCall/AppContext';
 
 function App() {
   return (
-      <div>
+      <div className='App'>
         <HeaderComp />
         <TabComponent />
       {/* <pre>{JSON.stringify(lbData, null, 2)}</pre> */}

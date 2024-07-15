@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background: url("./assests/bg.jpg") center/100% 100% no-repeat;
+  width: 100%;
 }
 
 .App-header {

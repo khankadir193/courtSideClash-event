@@ -8,10 +8,10 @@
   position: relative;
 }
 
-img {
+.guideBtn img {
   width: 15%;
   height: 6vh;
-  position: absolute;
+  /* position: absolute; */
   bottom: 7rem;
   /* left: 0; */
   /* top: 3rem; */
@@ -22,8 +22,8 @@ img {
   align-items: center;
   justify-content: space-between;
   padding: 10px;
-  background-color: #f8f9fa;
   border-bottom: 1px solid #ddd;
+  min-height: 140vw;
 }
 
 button {
