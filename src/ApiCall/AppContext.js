@@ -30,6 +30,7 @@ const AppContext = ({ children }) => {
   const months = (date.getUTCMonth() + 1).toString().padStart(2, '0');
   const years = date.getUTCFullYear();
   const dateStr = `${years}-${months}-${day}`;
+  let dateStrPrev = years + "-" + months + "-" + (day - 1 < 10 ? `0${day - 1}` : day - 1);
 
   const fetchData = async (url, key) => {
     try {
@@ -64,6 +65,19 @@ const AppContext = ({ children }) => {
         setLbData((prevState) => ({
           ...prevState,
           userWeeklyPrev: res?.data?.list,
+        }));
+      });
+  }
+
+  function getUserDailyPrev() {
+    fetch(
+      `${baseUrl}/api/activity/eidF/getLeaderboardInfoV2?dayIndex=${dateStrPrev}&eventDesc=20240726_court&rankIndex=17&pageNum=1&pageSize=20`
+    )
+      .then((res) => res.json())
+      .then((res) => {
+        setLbData((prevState) => ({
+          ...prevState,
+          userDailyPrev: res?.data?.list,
         }));
       });
   }
@@ -114,6 +128,7 @@ const AppContext = ({ children }) => {
     getWeeklyUserPrev(1);
     getTalentDaily();
     getUserDaily();
+    getUserDailyPrev();
   }, [0]);
 
   const value = {
@@ -122,7 +137,8 @@ const AppContext = ({ children }) => {
     getTalentDailyPrev,
     getTalentOverall,
     getWeeklyUserPrev,
-    getTalentDaily
+    getTalentDaily,
+    getUserDailyPrev
   };
 
   return <ApiContext.Provider value={value}>{children}</ApiContext.Provider>;

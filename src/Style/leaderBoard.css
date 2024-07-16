@@ -1,3 +1,6 @@
+*{
+  color: white;
+}
 .lb-comp {
   background-image: url('../assests/Leaderboard-bg.png');
   width: 95%;
@@ -84,6 +87,7 @@
     position: absolute;
     width: 17vw;
     z-index: 1;
+    left: 1vw;
   }
   .user-images .user-img {
     position: absolute;
