@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import RewardsSlider from "../components/RewardSlider";
-// import LeaderboardComponent from "../../components/LeaderboardComponent";
+import LeaderboardComponent from "../components/LeaderboardComp";
+
 import { talentDaily, talentWeekly } from "../ApiCall/ApiComp";
 import rewardsHeading from '../assests/Rewards-banner.png';
 const TalentSection = () => {
@@ -121,7 +122,7 @@ const TalentSection = () => {
           onClick={() => toggleLbTabs("overall")}
         />
       </div>
-      {/* <LeaderboardComponent isTalent={true} selTabs={lbTabs} /> */}
+      <LeaderboardComponent isTalent={true} selTabs={lbTabs} />
     </div>
   );
 };
