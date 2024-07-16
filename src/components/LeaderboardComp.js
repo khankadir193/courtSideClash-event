@@ -38,8 +38,8 @@ const LeaderboardComp = ({ isTalent, selTabs }) => {
     overallTeamUsersRanking
   } = lbData;
 
-  console.log('talenOverAll...',talentOverall);
-  console.log('userWeeklyPrev...',userWeeklyPrev);
+  console.log('userDaily.???/...',userDaily);
+  // console.log('userWeeklyPrev...',userWeeklyPrev);
 
 
 

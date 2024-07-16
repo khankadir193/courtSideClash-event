@@ -68,11 +68,52 @@ const AppContext = ({ children }) => {
       });
   }
 
+  // function getTalentDailyPrev() {
+  //   fetch(
+  //     `${baseUrl}/api/activity/eidF/getLeaderboardInfoV2?dayIndex=${dateStrPrev}&eventDesc=20240726_court&rankIndex=18&pageNum=1&pageSize=20`
+  //   )
+  //     .then((res) => res.json())
+  //     .then((res) => {
+  //       setLbData((prevState) => ({
+  //         ...prevState,
+  //         talenDailyPrev: res?.data?.list,
+  //       }));
+  //     });
+  // }
+
+  function getTalentDaily() {
+    fetch(
+      `${baseUrl}/api/activity/eidF/getLeaderboardInfoV2?dayIndex=${dateStr}&eventDesc=20240726_court&rankIndex=18&pageNum=1&pageSize=20`
+    )
+      .then((res) => res.json())
+      .then((res) => {
+        setLbData((prevState) => ({
+          ...prevState,
+          talenDaily: res?.data?.list,
+        }));
+      });
+  }
+
+  function getUserDaily() {
+    fetch(
+      `${baseUrl}/api/activity/eidF/getLeaderboardInfoV2?dayIndex=${dateStr}&eventDesc=20240726_court&rankIndex=17&pageNum=1&pageSize=20`
+    )
+      .then((res) => res.json())
+      .then((res) => {
+        setLbData((prevState) => ({
+          ...prevState,
+          userDaily: res?.data?.list,
+        }));
+      });
+  }
+
   useEffect(() => {
     getTalentWeeklyPrev(1); // example weekIndex
     getTalentDailyPrev();
     getTalentOverall();
     getWeeklyUserPrev(1);
+    getTalentDaily();
+    getUserDaily();
   }, [0]);
 
   const value = {
@@ -80,7 +121,8 @@ const AppContext = ({ children }) => {
     lbData,
     getTalentDailyPrev,
     getTalentOverall,
-    getWeeklyUserPrev
+    getWeeklyUserPrev,
+    getTalentDaily
   };
 
   return <ApiContext.Provider value={value}>{children}</ApiContext.Provider>;
