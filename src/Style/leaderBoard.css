@@ -1,3 +1,6 @@
+*{
+  color: white;
+}
 .lb-comp {
   background-image: url('../assests/Leaderboard-bg.png');
   width: 95%;
@@ -17,6 +20,35 @@
   top: -16vw;
   margin-top: -16vw;
 }
+
+.lb-comp .col-two {
+    grid-gap: 14%;
+    display: grid;
+    font-size: 2.5vw;
+    gap: 14%;
+    grid-template-columns: 43% 43%;
+    margin: auto;
+    text-align: center;
+    width: 90%;
+}
+
+ .lb-comp .col-two>div>p {
+    background-color: #422a397d;
+    border-radius: 15px;
+    margin: auto;
+    padding: 1.3vw 0 1vw;
+    width: 60%;
+    color: white;
+    box-sizing: border-box;
+    font-weight: bold;
+}
+/* 
+.lb-comp .talentLb-item .left-div .user-images .frame {
+    position: absolute;
+    top: 1vw;
+    width: 17vw;
+    z-index: 1;
+} */
 
 .lb-comp .switch-div {
   position: relative;
@@ -55,6 +87,7 @@
     position: absolute;
     width: 17vw;
     z-index: 1;
+    left: 1vw;
   }
   .user-images .user-img {
     position: absolute;

@@ -12,10 +12,9 @@ const AppContext = ({ children }) => {
   const [lbData, setLbData] = useState({
     talentOverall: [],
     talentWeekly: [],
-    talenWeeklyPrev: [],
-    talenDailyPrev: [],
-    talenDaily: [],
-
+    talentWeeklyPrev: [],
+    talentDailyPrev: [],
+    talentDaily: [],
     userWeekly: [],
     userOverall: [],
     userDaily: [],
@@ -30,7 +29,9 @@ const AppContext = ({ children }) => {
   const months = (date.getUTCMonth() + 1).toString().padStart(2, '0');
   const years = date.getUTCFullYear();
   const dateStr = `${years}-${months}-${day}`;
+  const dateStrPrev = `${years}-${months}-${(day - 1).toString().padStart(2, '0')}`;
 
+  // Function to fetch leaderboard data and update state
   const fetchData = async (url, key) => {
     try {
       const response = await fetch(url);
@@ -44,43 +45,62 @@ const AppContext = ({ children }) => {
     }
   };
 
+  // Individual functions for each type of data fetch
   const getTalentWeeklyPrev = (weekIndex) => {
-    fetchData(`${baseUrl}/api/activity/eidF/getLeaderboardInfoV2?dayIndex=${weekIndex - 1}&eventDesc=20240726_court&rankIndex=12&pageNum=1&pageSize=20`, 'talenWeeklyPrev');
+    fetchData(`${baseUrl}/api/activity/eidF/getLeaderboardInfoV2?dayIndex=${weekIndex - 1}&eventDesc=20240726_court&rankIndex=12&pageNum=1&pageSize=20`, 'talentWeeklyPrev');
   };
 
   const getTalentDailyPrev = () => {
-    fetchData(`${baseUrl}/api/activity/eidF/getLeaderboardInfoV2?dayIndex=${dateStr}&eventDesc=20240726_court&rankIndex=18&pageNum=1&pageSize=20`, 'talenDailyPrev');
+    fetchData(`${baseUrl}/api/activity/eidF/getLeaderboardInfoV2?dayIndex=${dateStrPrev}&eventDesc=20240726_court&rankIndex=18&pageNum=1&pageSize=20`, 'talentDailyPrev');
   };
 
   const getTalentOverall = () => {
     fetchData(`${baseUrl}/api/activity/eidF/getLeaderboardInfoV2?dayIndex=${dateStr}&eventDesc=20240726_court&rankIndex=11&pageNum=1&pageSize=20`, 'talentOverall');
   };
 
-  function getWeeklyUserPrev(weekIndex) {
-    //this api is wrong/dummy api for testing
-    fetch('http://test.streamkar.tv/api/activity/eidF/getLeaderboardInfoV2?dayIndex=2024-07-14&eventDesc=20240726_court&rankIndex=11&pageNum=1&pageSize=20')
-      .then((res) => res.json())
-      .then((res) => {
-        setLbData((prevState) => ({
-          ...prevState,
-          userWeeklyPrev: res?.data?.list,
-        }));
-      });
-  }
+  const getTalentWeekly = (weekIndex) => {
+    fetchData(`${baseUrl}/api/activity/eidF/getLeaderboardInfoV2?dayIndex=${weekIndex}&eventDesc=20240726_court&rankIndex=12&pageNum=1&pageSize=20`, 'talentWeekly');
+  };
 
+  const getWeeklyUserPrev = (weekIndex) => {
+    // This is a dummy API for testing purposes
+    fetchData('http://test.streamkar.tv/api/activity/eidF/getLeaderboardInfoV2?dayIndex=2024-07-14&eventDesc=20240726_court&rankIndex=11&pageNum=1&pageSize=20', 'userWeeklyPrev');
+  };
+
+  const getUserDailyPrev = () => {
+    fetchData(`${baseUrl}/api/activity/eidF/getLeaderboardInfoV2?dayIndex=${dateStrPrev}&eventDesc=20240726_court&rankIndex=17&pageNum=1&pageSize=20`, 'userDailyPrev');
+  };
+
+  const getTalentDaily = () => {
+    fetchData(`${baseUrl}/api/activity/eidF/getLeaderboardInfoV2?dayIndex=${dateStr}&eventDesc=20240726_court&rankIndex=18&pageNum=1&pageSize=20`, 'talentDaily');
+  };
+
+  const getUserDaily = () => {
+    fetchData(`${baseUrl}/api/activity/eidF/getLeaderboardInfoV2?dayIndex=${dateStr}&eventDesc=20240726_court&rankIndex=17&pageNum=1&pageSize=20`, 'userDaily');
+  };
+
+  // useEffect to call the API functions on mount
   useEffect(() => {
     getTalentWeeklyPrev(1); // example weekIndex
     getTalentDailyPrev();
     getTalentOverall();
     getWeeklyUserPrev(1);
-  }, [0]);
+    getTalentDaily();
+    getUserDaily();
+    getUserDailyPrev();
+    getTalentWeekly(0);
+  }, []);
 
   const value = {
-    getTalentWeeklyPrev,
     lbData,
+    getTalentWeeklyPrev,
     getTalentDailyPrev,
     getTalentOverall,
-    getWeeklyUserPrev
+    getWeeklyUserPrev,
+    getTalentDaily,
+    getUserDaily,
+    getUserDailyPrev,
+    getTalentWeekly,
   };
 
   return <ApiContext.Provider value={value}>{children}</ApiContext.Provider>;

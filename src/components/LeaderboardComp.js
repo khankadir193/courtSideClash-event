@@ -38,8 +38,8 @@ const LeaderboardComp = ({ isTalent, selTabs }) => {
     overallTeamUsersRanking
   } = lbData;
 
-  console.log('talenOverAll...',talentOverall);
-  console.log('userWeeklyPrev...',userWeeklyPrev);
+  console.log('getTalentWeekly.???/...', talentWeekly);
+  // console.log('userWeeklyPrev...',userWeeklyPrev);
 
 
 
@@ -120,10 +120,10 @@ const LeaderboardComp = ({ isTalent, selTabs }) => {
               selTabs.daily
                 ? ["Today", "Yesterday"]
                 : selTabs.weekly
-                ? ["Current", "Previous"]
-                : []
+                  ? ["Current", "Previous"]
+                  : []
             }
-            bg={selTabs.daily?bg:currPrevBg}
+            bg={selTabs.daily ? bg : currPrevBg}
             isPot={1}
             onToggle={toggleTabs}
           />
@@ -134,12 +134,32 @@ const LeaderboardComp = ({ isTalent, selTabs }) => {
         className={`winners ${isSeeMore === false ? "scroll" : ""}`}
         ref={divRef}
       >
+        {isTalent ?
+          <div className="col-two" >
+            <div><p>Talents Name</p></div>
+            <div><p>Gems Recieved</p></div>
+          </div>
+          : !isTalent && selTabs.overall && !selTabs.weekly ? <div className="col-two" >
+            <div><p>Team Name</p></div>
+            <div><p>Total Trophies</p></div>
+          </div> : !isTalent && !selTabs.overall && selTabs.weekly ? <div className="col-two" >
+            <div><p>Team Name</p></div>
+            <div><p>Baskets Scored</p></div>
+          </div> : !isTalent && !selTabs.overall && !selTabs.weekly && tabs.cuurent || tabs.prev ?
+            <div className="col-two">
+              <div><p>User Name</p></div>
+              <div><p>Baskets Scored</p></div>
+            </div> : ''}
         {selectedData?.length ? (
           selectedData?.map((user, index) => (
             <TalentLbItem
               user={user}
               index={index}
               isTalent={isTalent}
+              // estLimit={(index < estLimit )? true : false}
+              isPrev={tabs.prev}
+              // isEstRewards={isEstRewards}
+              // estRew={calculateEstRewards(index , (!isTalent && !selTabs.weekly && tabs.prev) , user?.userScore ,  (isTalent && !selTabs.weekly   && selTabs.overall ))}
               showTeams={shouldIShowTeams()}
               isOverall={!isTalent && selTabs.overall}
             />

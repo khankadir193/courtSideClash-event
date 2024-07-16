@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import RewardsSlider from "./RewardSlider";
 import LeaderboardComponent from "./LeaderboardComp";
-import { userOverall, userWeekly } from '../ApiCall/ApiComp'
-import Daily from "./Daily";
-import './User.css'
+import { userOverall, userWeekly } from "../ApiCall/ApiComp";
+import "./User.css";
 
+// UserSection component
 const UserSection = () => {
   const [rewTabs, setRewTabs] = useState({
     daily: true,
@@ -18,98 +18,64 @@ const UserSection = () => {
     overall: false,
   });
 
+  // Function to toggle reward tabs
   const toggleRewTabs = (name) => {
-    if (name === "daily") {
-      setRewTabs({
-        daily: true,
-        weekly: false,
-        overall: false,
-      });
-    } else if (name === "weekly") {
-      setRewTabs({
-        daily: false,
-        weekly: true,
-        overall: false,
-      });
-    } else if (name === "overall") {
-      setRewTabs({
-        daily: false,
-        weekly: false,
-        overall: true,
-      });
-    }
+    setRewTabs({
+      daily: name === "daily",
+      weekly: name === "weekly",
+      overall: name === "overall",
+    });
   };
 
+  // Function to toggle leaderboard tabs
   const toggleLbTabs = (name) => {
-    if (name === "daily") {
-      setLbTabs({
-        daily: true,
-        weekly: false,
-        overall: false,
-      });
-    } else if (name === "weekly") {
-      setLbTabs({
-        daily: false,
-        weekly: true,
-        overall: false,
-      });
-    } else if (name === "overall") {
-      setLbTabs({
-        daily: false,
-        weekly: false,
-        overall: true,
-      });
-    }
+    setLbTabs({
+      daily: name === "daily",
+      weekly: name === "weekly",
+      overall: name === "overall",
+    });
   };
+
   return (
     <div className="user-sec">
+      {/* Reward Tabs */}
       <div className="rew-tabs">
-        <button
-          className={`daily ${!rewTabs.daily && "hide"}`}
-          onClick={() => toggleRewTabs("daily")}
-        />
-        <button
-          className={`weekly ${!rewTabs.weekly && "hide"}`}
-          onClick={() => toggleRewTabs("weekly")}
-        />
-
-        <button
-          className={`overall ${!rewTabs.overall && "hide"}`}
-          onClick={() => toggleRewTabs("overall")}
-        />
+        {["daily", "weekly", "overall"].map((tab) => (
+          <button
+            key={tab}
+            className={`${tab} ${!rewTabs[tab] && "hide"}`}
+            onClick={() => toggleRewTabs(tab)}
+          />
+        ))}
       </div>
+
+      {/* Rewards Section */}
       <div className="rewards">
         {rewTabs.daily ? (
           <p className="static-rew">
             The rewards will be distributed to TOP 7 users in the ratio of the
             Baskets scored by the users during the day.
           </p>
-        ) : rewTabs.weekly ? (
-          <>
-            <RewardsSlider rewards={userWeekly} showRanks={true}/>
-          </>
         ) : (
-          <>
-            <RewardsSlider rewards={userOverall} showRanks={true} />
-          </>
+          <RewardsSlider
+            rewards={rewTabs.weekly ? userWeekly : userOverall}
+            showRanks={true}
+          />
         )}
       </div>
 
+      {/* Leaderboard Tabs */}
       <div className="rew-tabs">
-        <button
-          className={`daily ${!lbTabs.daily && "hide"}`}
-          onClick={() => toggleLbTabs("daily")}
-        />
-        <button
-          className={`weekly ${!lbTabs.weekly && "hide"}`}
-          onClick={() => toggleLbTabs("weekly")}
-        />
-
-        <button
-          className={`overall ${!lbTabs.overall && "hide"}`}
-          onClick={() => toggleLbTabs("overall")}
-        />
+        {["daily", "weekly", "overall"].map((tab) => (
+          <button
+            key={tab}
+            className={`${tab} ${!lbTabs[tab] && "hide"}`}
+            onClick={() => toggleLbTabs(tab)}
+          />
+        ))}
       </div>
+
+      {/* Leaderboard Section */}
       <LeaderboardComponent isTalent={false} selTabs={lbTabs} />
     </div>
   );
