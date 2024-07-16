@@ -57,6 +57,19 @@ const AppContext = ({ children }) => {
     fetchData(`${baseUrl}/api/activity/eidF/getLeaderboardInfoV2?dayIndex=${dateStr}&eventDesc=20240726_court&rankIndex=11&pageNum=1&pageSize=20`, 'talentOverall');
   };
 
+  function getTalentWeekly(weekIndex) {
+    fetch(
+      `${baseUrl}/api/activity/eidF/getLeaderboardInfoV2?dayIndex=${weekIndex}&eventDesc=20240726_court&rankIndex=12&pageNum=1&pageSize=20`
+    )
+      .then((res) => res.json())
+      .then((res) => {
+        setLbData((prevState) => ({
+          ...prevState,
+          talentWeekly: res?.data?.list,
+        }));
+      });
+  }
+
   function getWeeklyUserPrev(weekIndex) {
     //this api is wrong/dummy api for testing
     fetch('http://test.streamkar.tv/api/activity/eidF/getLeaderboardInfoV2?dayIndex=2024-07-14&eventDesc=20240726_court&rankIndex=11&pageNum=1&pageSize=20')
@@ -129,6 +142,7 @@ const AppContext = ({ children }) => {
     getTalentDaily();
     getUserDaily();
     getUserDailyPrev();
+    getTalentWeekly(0);
   }, [0]);
 
   const value = {
