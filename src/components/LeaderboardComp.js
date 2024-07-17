@@ -26,8 +26,8 @@ const LeaderboardComp = ({ isTalent, selTabs }) => {
     talentOverall,
     talentWeekly,
     talenWeeklyPrev,
-    talenDailyPrev,
-    talenDaily,
+    talentDailyPrev,
+    talentDaily,
 
     userWeekly,
     userOverall,
@@ -38,7 +38,7 @@ const LeaderboardComp = ({ isTalent, selTabs }) => {
     overallTeamUsersRanking
   } = lbData;
 
-  console.log('getTalentWeekly.???/...', talentWeekly);
+  console.log('talentDaily...???/...',talentDaily);
   // console.log('userWeeklyPrev...',userWeeklyPrev);
 
 
@@ -87,9 +87,9 @@ const LeaderboardComp = ({ isTalent, selTabs }) => {
         }
       } else {
         if (tabs.cuurent) {
-          setSelectedData(talenDaily);
+          setSelectedData(talentDaily);
         } else {
-          setSelectedData(talenDailyPrev);
+          setSelectedData(talentDailyPrev);
         }
       }
     } else {
