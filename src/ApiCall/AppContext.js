@@ -80,7 +80,7 @@ const AppContext = ({ children }) => {
 
   // Individual functions for each type of data fetch
   const getTalentDaily = () => {
-    fetchData(`${baseUrl}/api/activity/eidF/getLeaderboardInfoV2?dayIndex=${dateStr}&eventDesc=20240726_court&rankIndex=18&pageNum=1&pageSize=20`, 'talentDaily');
+    fetchData(`${baseUrl}/api/activity/eidF/getLeaderboardInfoV2?dayIndex=${dateStr}&eventDesc=20240726_court&rankIndex=18&pageNum=1&pageSize=20`,'talentDaily')
   };
 
   const getTalentDailyPrev = () => {
