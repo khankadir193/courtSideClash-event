@@ -34,7 +34,7 @@ const HeaderComp = () => {
 
       {/* <LangDropDownComp /> */}
       <button className='guideBtn' onClick={toggleGuide}>
-        <img src={infoLangMark} alt='infoLangMark' />
+        <img src={infoLangMark}  alt='infoLangMark' />
       </button>
       {showGuide && <Guide onClose={closeGuide} />} {/* Conditionally render the Guide component */}
     </div>
