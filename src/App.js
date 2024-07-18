@@ -13,9 +13,7 @@ function App() {
       <div className='App'>
         <HeaderComp />
         <FieldGoalMilestone />
-        <TabComponent />
       {/* <pre>{JSON.stringify(lbData, null, 2)}</pre> */}
-
       </div>
 
   );

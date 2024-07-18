@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import TimeUnit from "./TimeUnit";
+import '../Style/defaultStyle.css';
 
 function Timer({ targetTimestamp }) {
   const [remainingTime, setRemainingTime] = useState({
@@ -43,7 +44,7 @@ function Timer({ targetTimestamp }) {
 
   return (
     <div
-      className="d-flex p-rel al-center"
+      className="d-flex p-rel al-center gap"
       // style={{ left: "5vw", top: "8vw" }}
     >
       <TimeUnit unit="Days" value={remainingTime.days} />

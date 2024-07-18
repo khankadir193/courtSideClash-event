@@ -14,6 +14,7 @@ import { useApi } from "../ApiCall/AppContext";
 import Marquee from "react-fast-marquee";
 import { baseUrl } from "../ApiCall/ApiComp";
 import Timer from "./Timer";
+import TabComponent from "./TabComponent";
 // import userBtn from "../../assets/images/usersBtn.png";
 // import talentBtn from "../../assets/images/talentBtn.png";
 // import UserSection from "./UserSection";
@@ -234,31 +235,7 @@ export const FieldGoalMilestone = () => {
           </div>
         </div>
       </div>
-      {/* <BeansPot />
-      <Leaderboard /> */}
-      {/* <div className="user-talent-sec">
-        <div className="tabs">
-          <div
-            className={tabs.user ? "tabOn" : "tabOff"}
-            onClick={() => toggleTabs("user")}
-          >
-            <img src={userBtn} />
-          </div>
-
-          <div
-            className={tabs.talent ? "tabOn" : "tabOff"}
-            onClick={() => toggleTabs("talent")}
-          >
-            <img src={talentBtn} />
-          </div>
-        </div>
-
-        {tabs.user ? <UserSection /> : <TalentSection />}
-      </div> */}
-
-      {/* <div className="footer">
-        <span className="rights">All rights reserved by StreamKar</span>
-      </div> */}
+      <TabComponent />
       <p className="rights">All Rights Reserved</p>
       {/* {progressPopUp ? <PopUp>My popup</PopUp> : ""}
       {showSuccessAttemptPopUp ? <SuccessAttemptPopUp /> : ""}
