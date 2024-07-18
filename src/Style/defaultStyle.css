@@ -1,0 +1,11 @@
+.d-flex{
+    display: flex;
+}
+
+.al-center{
+    text-align: center;
+}
+
+.gap{
+    gap: .5rem;
+}

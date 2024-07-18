@@ -23,6 +23,26 @@ const AppContext = ({ children }) => {
     weeklyTeamUserRanking: [],
     overallTeamUsersRanking: [],
   });
+  const [marqueeData, setMarqueeData] = useState({
+    game: [],
+    milestone: [],
+  });
+  const [showSuccessAttemptPopUp, setShowSucessAttemptPopUp] = useState(false);
+  const [userInfo, setUserInfo] = useState({
+    throwsLeft: 0,
+    weekIndex: 0,
+    weeklyBeansPot: {},
+    dailyScore: 0,
+    weeklyScore: 0,
+    teamIndex: 0,
+    teamId: 0,
+  });
+  const [currentUser, setCurrentUser] = useState({
+    userId: 0,
+    userToken: "",
+  });
+  const [milestonePopUp, setMilestonePopUp] = useState(false);
+  const [isDisabled, setIsDisabled] = useState(false);
 
   const date = new Date();
   const day = date.getUTCDate().toString().padStart(2, '0');
@@ -30,6 +50,79 @@ const AppContext = ({ children }) => {
   const years = date.getUTCFullYear();
   const dateStr = `${years}-${months}-${day}`;
   const dateStrPrev = `${years}-${months}-${(day - 1).toString().padStart(2, '0')}`;
+
+  //marquee data
+  function getGameMarqueeData() {
+    fetch(
+      `${baseUrl}/api/activity/eidF/getWinnerRankInfo?eventDesc=20240726_court&rankIndex=1&pageNum=1&pageSize=20`
+    )
+      .then((res) => res.json())
+      .then((res) => {
+        setMarqueeData((prevState) => ({ ...prevState, game: res?.data?.list }));
+      });
+  }
+
+  function getMilestoneMarqueeData() {
+    fetch(
+      `${baseUrl}/api/activity/eidF/getWinnerRankInfo?eventDesc=20240726_court&rankIndex=2&pageNum=1&pageSize=20`
+    )
+      .then((res) => res.json())
+      .then((res) => {
+        setMarqueeData((prevState) => ({ ...prevState, milestone: res?.data?.list }));
+      });
+  }
+
+  //getUserInfo..
+  const getInfo = () => {
+    fetch(
+      `${baseUrl}/api/activity/courtSide/getUserEventInfo?userId=${currentUser.userId}`,
+      {
+        headers: {
+          method: "GET",
+          checkTag: "",
+          redirect: "follow",
+        },
+      }
+    )
+      .then((res) => res.json())
+      .then((res) => {
+        if (res.errorCode === 0) {
+          let todayBeanspotValueKey = 'DAILY_USER_' + dateStr;
+          let yesterdayBeanspotValueKey = 'DAILY_USER_' + dateStrPrev;
+          setUserInfo({
+            ...userInfo,
+            throwsLeft: res?.data?.gamePoints,
+            weekIndex: res?.data?.weekIndex,
+            weeklyBeansPot: res?.data?.weeklyBeansPot,
+            dailyScore: res?.data?.dailyScore,
+            weeklyScore: res?.data?.weeklyScore,
+            teamId: res?.data?.teamId,
+            todayBeanspotValue: res?.data?.weeklyBeansPot[todayBeanspotValueKey],
+            yesterdayBeanspotValue: res?.data?.weeklyBeansPot[yesterdayBeanspotValueKey]
+          });
+
+
+          getWeeklyUser(res.data.weekIndex);
+          getWeeklyUserPrev(res.data.weekIndex);
+          getTalentWeekly(res.data.weekIndex);
+          getTalentWeeklyPrev(res.data.weekIndex);
+          // getWeeklyTeamUsers(res.data.weekIndex,res.data.teamId);
+          // getOverallTeamUsers(res.data.teamId);
+        } else {
+          // alert(res.msg);
+        }
+      })
+      .catch((error) => { });
+  };
+
+  //pop up function
+  const toggleSuccessAttemptPopUp = () => {
+    setShowSucessAttemptPopUp((prevState) => !prevState);
+  };
+
+  const toggleMilestonePopUp = () => {
+    setMilestonePopUp((prev) => !prev);
+  };
 
   // Function to fetch leaderboard data and update state
   const fetchData = async (url, key) => {
@@ -73,14 +166,14 @@ const AppContext = ({ children }) => {
     )
       .then((res) => res.json())
       .then((res) => {
-        setLbData((prevState)=>({...prevState , overallTeamUsersRanking:{...prevState.overallTeamUsersRanking,[teamId]:res.data.list}}))
-        
+        setLbData((prevState) => ({ ...prevState, overallTeamUsersRanking: { ...prevState.overallTeamUsersRanking, [teamId]: res.data.list } }))
+
       });
   }
 
   // Individual functions for each type of data fetch
   const getTalentDaily = () => {
-    fetchData(`${baseUrl}/api/activity/eidF/getLeaderboardInfoV2?dayIndex=${dateStr}&eventDesc=20240726_court&rankIndex=18&pageNum=1&pageSize=20`,'talentDaily')
+    fetchData(`${baseUrl}/api/activity/eidF/getLeaderboardInfoV2?dayIndex=${dateStr}&eventDesc=20240726_court&rankIndex=18&pageNum=1&pageSize=20`, 'talentDaily')
   };
 
   const getTalentDailyPrev = () => {
@@ -171,6 +264,12 @@ const AppContext = ({ children }) => {
     getWeeklyUserPrev(1);
     getWeeklyUser(3);
     getOverallUsers();
+
+    //marqueeData
+    getGameMarqueeData();
+
+    //this method i need to put condition for userId
+    getInfo();
   }, []);
 
   const value = {
@@ -184,7 +283,16 @@ const AppContext = ({ children }) => {
     getUserDailyPrev,
     getTalentWeekly,
     getWeeklyUser,
-    getOverallUsers
+    getOverallUsers,
+    //marquee Data
+    marqueeData,
+    milesStoneMarquee: marqueeData.milestone,
+    //popup methods and state
+    toggleSuccessAttemptPopUp: toggleSuccessAttemptPopUp,
+    showSuccessAttemptPopUp: showSuccessAttemptPopUp,
+    milestonePopUp: milestonePopUp,
+    toggleMilestonePopUp: toggleMilestonePopUp,
+    isDisabled
   };
 
   return <ApiContext.Provider value={value}>{children}</ApiContext.Provider>;

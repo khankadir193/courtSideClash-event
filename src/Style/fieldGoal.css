@@ -1,0 +1,455 @@
+* {
+  color: white;
+}
+
+.fieldGoalSection {
+  width: 100%;
+  /* margin-top: -4vw; */
+}
+
+.fieldGoalSection .marquee .field-marq-item-odd {
+  background: url('../assests/orangeTickertape.png') no-repeat center/100% 100%;
+}
+
+.fieldGoalSection .marquee .field-marq-item-even {
+  background: url('../assests/yellowTickertape.png') no-repeat center/100% 100%;
+}
+
+.fieldGoalSection .marquee .field-marq-item {
+  display: flex;
+  border: 1px solid;
+  padding: 0.5vw;
+  font-size: 1.8vw;
+  border-radius: 5vw;
+  margin-right: 4vw;
+  padding-right: 2vw;
+}
+
+.fieldGoalSection .marquee .field-marq-item .user-img {
+  width: 5vw;
+  height: 5vw;
+  border-radius: 100%;
+}
+
+.fieldGoalSection .marquee .field-marq-item .user-details {
+  display: flex;
+  align-items: center;
+}
+
+.fieldGoalSection .marquee .field-marq-item .user-details .name {
+  margin-left: 0.7vw;
+}
+
+.fieldGoalSection .marquee .field-marq-item .user-details .rew-img {
+  width: 5vw;
+  margin-left: 0.5vw;
+  margin-right: 0.5vw;
+}
+
+.fieldGoalSection .rights {
+  position: relative;
+  font-size: 2.8vw;
+  text-align: center;
+}
+
+.fieldGoalSection .timer-sec {
+  background-image: url(../assests/Day-left-bg.png);
+  width: 60%;
+  margin: 0 auto;
+  background-size: 100% 100%;
+  min-height: 17vw;
+  gap: 2vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.fieldGoalSection .timer-sec .title {
+  color: yellow;
+  font-size: 3vw;
+  text-align: center;
+}
+
+.fieldGoalSection .timer-sec .time-unit {
+  color: white;
+}
+
+.fieldGoalSection .timer-sec .time-unit .value {
+  width: 8vw;
+  height: 8vw;
+  background-image: url("../assests/Days-bg.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2vw;
+  flex-direction: column;
+}
+
+.fieldGoalSection .timer-sec .time-unit .unit {
+  font-size: 3vw;
+}
+
+.fieldGoalSection .successfull-attempts {
+  width: 96%;
+  height: 54vw;
+  background-image: url("../assests/Progress-bar-bg2.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: relative;
+  left: 4vw;
+}
+
+.fieldGoalSection .successfull-attempts .attempts-display {
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width: 22vw;
+  height: 8vw;
+  position: absolute;
+  right: 18vw;
+  top: 9vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fieldGoalSection .successfull-attempts .attempts-display .total-attempts {
+  position: relative;
+  top: 1vw;
+  color: yellow;
+  font-family: "HiJack";
+  font-size: 4vw;
+  left: 1vw;
+}
+
+.fieldGoalSection .successfull-attempts .blackNWhite {
+  filter: grayscale(100);
+}
+
+.fieldGoalSection .successfull-attempts P {
+  font-family: "HiJack";
+  color: yellow;
+  position: absolute;
+  font-size: 3vw;
+  top: 10vw;
+  left: 13vw;
+  width: 70%;
+  text-align: center;
+}
+
+.fieldGoalSection .successfull-attempts .iaBtn {
+  /* width: calcView(60);
+  position: absolute;
+  left: calcView(25);
+  top: calcView(150); */
+  left: 3.3333333333vw;
+  position: absolute;
+  top: 20vw;
+  width: 8vw;
+}
+
+.fieldGoalSection .successfull-attempts .ibBtn {
+  /* width: calcView(60);
+  position: absolute;
+  right: 8.33333vw;
+  top: 6.66667vw;
+  z-index: 1; */
+  position: absolute;
+  right: 8.33333vw;
+  top: 6.66667vw;
+  width: 8vw;
+  z-index: 1;
+}
+
+.fieldGoalSection .successfull-attempts .progressBarSection {
+  width: 97.5%;
+  height: 40vw;
+  position: relative;
+}
+
+.fieldGoalSection .successfull-attempts .progressBarSection .progressBar {
+  width: 80%;
+  height: calcView(150);
+  position: absolute;
+  top: calcView(180);
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.fieldGoalSection .successfull-attempts .progressBarSection .progressBar .innerProgress {
+  margin-top: 30vw;
+}
+
+.fieldGoalSection .successfull-attempts .progressBarSection .progressBar .innerProgress .line {
+  width: 100%;
+  height: 16vw;
+  background-image: url("../assests/progress-bar.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  background-position-y: center;
+}
+
+.fieldGoalSection .successfull-attempts .progressBarSection .progressBar .innerProgress .line .currPosition {
+  width: 6.6666666667vw;
+  position: absolute;
+  top: -2vw;
+}
+
+.fieldGoalSection .successfull-attempts .progressBarSection .progressBar .innerProgress .line .completed {
+  width: 9vw;
+  position: absolute;
+  top: 3.5vw;
+  left: 0.3vw;
+}
+
+.fieldGoalSection .successfull-attempts .progressBarSection .progressBar .innerProgress .line .completed100 {
+  width: 9vw;
+  position: absolute;
+  top: 3.5vw;
+  left: 13.5vw;
+}
+
+.fieldGoalSection .successfull-attempts .progressBarSection .progressBar .innerProgress .line .completed200 {
+  width: 9vw;
+  position: absolute;
+  top: 3.5vw;
+  left: 27vw;
+}
+
+.fieldGoalSection .successfull-attempts .progressBarSection .progressBar .innerProgress .line .completed500 {
+  width: 9vw;
+  position: absolute;
+  top: 3.5vw;
+  left: 40vw;
+}
+
+.fieldGoalSection .successfull-attempts .progressBarSection .progressBar .innerProgress .line .completed1k {
+  width: 9vw;
+  position: absolute;
+  top: 3.5vw;
+  left: 54vw;
+}
+
+.fieldGoalSection .successfull-attempts .progressBarSection .progressBar .innerProgress .line .completed2k {
+  width: 9vw;
+  position: absolute;
+  top: 3.5vw;
+  left: 67vw;
+}
+
+.fieldGoalSection .successfull-attempts .progressBarSection .progressBar .innerProgress .line .animate {
+  transition: transform 1.5s ease-in-out;
+}
+
+.fieldGoalSection .successfull-attempts .progressBarSection .progressLabel {
+  width: 85%;
+  height: 12vw;
+  background-image: url("../assests/numbers.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  top: -3vw;
+  left: 8vw;
+  right: 5.33333vw;
+  margin: auto;
+}
+
+/* .fieldGoalSection .beans-pot {
+  width: 95%;
+  height: calcView(500);
+  background-image: url("../../assets/images/gifting-beans-pot.gif");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: calcView(60) auto 0;
+  position: relative;
+} */
+.fieldGoalSection .beans-pot .title {
+  position: absolute;
+  width: 50%;
+  left: calcView(180);
+  top: calcView(-45);
+  z-index: 2;
+}
+
+/* .fieldGoalSection .beans-pot .potInfo {
+  position: absolute;
+  height: 7.66667vw;
+  width: 100%;
+  z-index: 1;
+  background-image: url(../../assets/images/beans-pot-info.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  text-align: center;
+  padding-top: calcView(15);
+} */
+.fieldGoalSection .beans-pot .potInfo p {
+  margin-top: calcView(3);
+  font-family: Helvetica;
+  font-weight: bold;
+  font-size: 1.8vw !important;
+}
+
+.fieldGoalSection .beans-pot .beans-number {
+  display: flex;
+  position: absolute;
+  left: calcView(270);
+  top: calcView(80);
+  align-items: center;
+  font-size: calcView(18);
+}
+
+.fieldGoalSection .beans-pot .beans-number .bean {
+  width: calcView(50);
+}
+
+.fieldGoalSection .beans-pot .beans-number span {
+  color: black;
+  font-family: "HiJack";
+  font-size: 4vw;
+}
+
+.fieldGoalSection .user-talent-sec .tabs {
+  display: flex;
+  justify-content: center;
+  gap: 6vw;
+}
+
+.fieldGoalSection .user-talent-sec .tabs .tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3vw;
+  padding: 1vw 2vw;
+  font-family: "HiJack";
+}
+
+.fieldGoalSection .user-talent-sec .tabs .tab.active {
+  background-color: yellow;
+  border-radius: 2vw;
+}
+
+/* .fieldGoalSection .user-talent-sec .topUsersTable .user {
+  width: 95%;
+  background: url(../../assets/images/user-list-item-bg.png) no-repeat center/100% 100%;
+  display: flex;
+  padding: 0.5vw 2vw;
+  border-radius: 1vw;
+  margin: 1.5vw auto;
+} */
+.fieldGoalSection .user-talent-sec .topUsersTable .user .userImage {
+  height: 8vw;
+  width: 8vw;
+  border-radius: 100%;
+}
+
+.fieldGoalSection .user-talent-sec .topUsersTable .user .userName {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: "HiJack";
+  font-size: 2.5vw;
+}
+
+.fieldGoalSection .user-talent-sec .topUsersTable .user .userName .rank {
+  font-size: 2vw;
+  color: yellow;
+}
+
+.fieldGoalSection .user-talent-sec .topUsersTable .user .userName .score {
+  font-size: 2vw;
+}
+
+.fieldGoalSection .user-talent-sec .topUsersTable .user .rankLabel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.fieldGoalSection .user-talent-sec .topUsersTable .user .rankLabel img {
+  width: 8vw;
+}
+
+.fieldGoalSection .user-talent-sec .topUsersTable .user .rankLabel p {
+  font-size: 2vw;
+  color: white;
+  text-align: center;
+}
+
+.fieldGoalSection .user-talent-sec .table-switcher {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5vw;
+}
+
+.fieldGoalSection .user-talent-sec .table-switcher .switchBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3vw;
+  padding: 1vw 2vw;
+  font-family: "HiJack";
+  border: 2px solid yellow;
+  border-radius: 2vw;
+  width: 38vw;
+  text-align: center;
+}
+
+.fieldGoalSection .user-talent-sec .table-switcher .switchBtn.active {
+  background-color: yellow;
+}
+
+@media screen and (max-width: 1200px) {
+  .fieldGoalSection .marquee .field-marq-item {
+    font-size: 1.5vw;
+  }
+
+  .fieldGoalSection .timer-sec .title {
+    font-size: 2.5vw;
+  }
+
+  .fieldGoalSection .timer-sec .time-unit .value {
+    width: 7vw;
+    height: 7vw;
+  }
+
+  .fieldGoalSection .timer-sec .time-unit .unit {
+    font-size: 2.5vw;
+  }
+
+  .fieldGoalSection .successfull-attempts .attempts-display .total-attempts {
+    font-size: 3.5vw;
+  }
+
+  .fieldGoalSection .successfull-attempts P {
+    font-size: 2.5vw;
+  }
+
+  .fieldGoalSection .beans-pot .potInfo p {
+    font-size: 1.5vw !important;
+  }
+
+  .fieldGoalSection .user-talent-sec .tabs .tab {
+    font-size: 2.5vw;
+  }
+
+  .fieldGoalSection .user-talent-sec .topUsersTable .user .userName {
+    font-size: 2vw;
+  }
+
+  .fieldGoalSection .user-talent-sec .topUsersTable .user .userName .rank {
+    font-size: 1.8vw;
+  }
+
+  .fieldGoalSection .user-talent-sec .topUsersTable .user .userName .score {
+    font-size: 1.8vw;
+  }
+
+  .fieldGoalSection .user-talent-sec .topUsersTable .user .rankLabel p {
+    font-size: 1.8vw;
+  }
+}
