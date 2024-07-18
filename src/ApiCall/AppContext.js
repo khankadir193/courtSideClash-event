@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import {allTeams,testUserId} from './ApiComp';
 
 // Create the context
 const ApiContext = createContext();
@@ -75,7 +76,7 @@ const AppContext = ({ children }) => {
   //getUserInfo..
   const getInfo = () => {
     fetch(
-      `${baseUrl}/api/activity/courtSide/getUserEventInfo?userId=${currentUser.userId}`,
+      `${baseUrl}/api/activity/courtSide/getUserEventInfo?userId=${currentUser.userId ? currentUser.userId : testUserId}`,
       {
         headers: {
           method: "GET",
@@ -292,7 +293,8 @@ const AppContext = ({ children }) => {
     showSuccessAttemptPopUp: showSuccessAttemptPopUp,
     milestonePopUp: milestonePopUp,
     toggleMilestonePopUp: toggleMilestonePopUp,
-    isDisabled
+    isDisabled,
+    userInfo: userInfo,
   };
 
   return <ApiContext.Provider value={value}>{children}</ApiContext.Provider>;
