@@ -4,6 +4,8 @@
   position: fixed;
   top: 0;
   left: 0;
+  right: 0;
+  bottom: 0;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
@@ -11,41 +13,153 @@
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  flex-direction: column;
 }
 
 .guide-modal {
   background: white;
-  width: 90%;
+  width: 95%;
   max-width: 500px;
+  min-height: 400px;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  position: relative;
+  /* position: relative; */
+  background: url("../assests/guide-bg.png") center / 100% 100% no-repeat;
 }
 
 .guide-header {
+  width: 80%;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px;
-  background-color: #f1f1f1;
-  border-bottom: 1px solid #ddd;
+  margin-top: -3.25rem;
+  justify-content: center;
+  position: absolute;
+  left: 12%;
 }
 
+.guide-header img {
+  width: 100%;
+}
+
+.guide-content .event-gifts {
+  background: url("../assests/Rewards-bg.png") center / 100% 100% no-repeat;
+  height: 15rem;
+  width: 95%;
+  margin: auto;
+  position: relative;
+}
 .guide-close-button {
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: #333;
+  width: 3rem;
+  height: 3rem;
+  margin-top: 1rem;
+}
+.guide-close-button img {
+  width: 100%;
+  height: 100%;
 }
 
-.guide-content {
-  padding: 16px;
+.gifts {
+  background: url("../assests/gifts.png") center / 100% 100% no-repeat;
+  padding: 4rem 0;
+  margin-top: -3.5rem;
+  width: 100%;
+  position: relative;
 }
-
-.guide-content p {
-  margin: 0;
+.gifts img {
+  position: absolute;
+  right: 0;
+  width: 4.5rem;
+  top: 0;
+}
+.event-gifts .title{
+  color: #fff;
   font-size: 1rem;
-  color: #555;
+  margin-top: 0.5rem;
+  font-weight:700;
+  text-transform: uppercase;
+}
+.event-gifts .gift1 {
+  position: absolute;
+  left: 3vw;
+  top: 5rem;
+  width: 27vw;
+}
+.event-gifts .gift2 {
+  left: 7rem;
+  position: absolute;
+  top: 3rem;
+  width: 10rem;
+}
+.event-gifts .gift3 {
+  right: 1.5rem;
+  position: absolute;
+  top: 5rem;
+  width: 7.5rem;
+}
+
+.gift1Detail {
+  color: rgb(100, 104, 107);
+  position: absolute;
+  width: 3rem;
+  height: 5rem;
+  top: 13rem;
+  z-index: 89;
+  left: 3.25rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.gift1Detail div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 2rem;
+}
+
+.gift1Detail div img {
+  width: 1.5rem;
+}
+
+.gift2Detail {
+  color: rgb(100, 104, 107);
+  position: absolute;
+  width: 3rem;
+  height: 5rem;
+  top: 12.5rem;
+  left: 9rem;
+  font-weight: 600;
+  z-index: 89;
+}
+
+.gift2Detail div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 3rem;
+}
+
+.gift2Detail div img {
+  width: 1.5rem;
+}
+
+.gift3Detail {
+  width: 2rem;
+  height: 3rem;
+  position: absolute;
+  top: 13rem;
+  left: 17rem;
+  z-index: 99;
+  font-size: 0.75rem;
+  color: rgb(100, 104, 107);
+  font-weight: 700;
+}
+
+.gift3Detail div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1.25rem;
+}
+.gift3Detail div img{
+  width: 1rem;
 }
