@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "../Style/popup.css";
-// import congoGifBg from '../assets/images/Congo-gif.gif'
-import congoGifBg from '../assests/default.png';
+import congoGifBg from '../assests/default.png'; //here should cong image
+
 const PopUp = (props) => {
   const {
     children,
@@ -14,7 +14,7 @@ const PopUp = (props) => {
     isMilestone,
     guide,
     isTeam,
-   textTitle,
+    textTitle,
   } = props;
 
   useEffect(() => {
@@ -23,40 +23,41 @@ const PopUp = (props) => {
       document.body.style.overflow = "auto";
     };
   }, []);
+
+  const getMinHeight = () => {
+    if (isAccPopUp) return "74vw";
+    if (isRewards) return "58vw";
+    if (isGame) return "63vw";
+    if (isMilestone) return "108vw";
+    if (guide) return "124vw";
+    if (isTeam) return "124vw";
+    return "";
+  };
+
+  const getWidth = () => {
+    if (isAccPopUp) return "85%";
+    if (isRewards) return "91%";
+    if (isMilestone) return "98%";
+    if (guide) return "95%";
+    if (isTeam) return "95%";
+    return "";
+  };
+
+  const getTitleClass = () => {
+    if (guide) return "guide-title";
+    if (isMilestone) return "info-title";
+    if (isTeam) return "teams-title";
+    return "title";
+  };
+
   return (
     <div className="overlay">
       <div
         className="content"
         style={{
-          backgroundImage: `${textTitle == 'HURRAH!!' || textTitle == 'GODLIKE!!'?`url(${congoGifBg})`: `url(${bg})`}`,
-          minHeight: `${
-            isAccPopUp
-              ? "74vw"
-              : isRewards
-              ? "58vw"
-              : isGame
-              ? "63vw"
-              : isMilestone
-              ? "108vw"
-              : guide
-              ? "124vw"
-              : isTeam
-              ? "124vw"
-              : ""
-          }`,
-          width: `${
-            isAccPopUp
-              ? "85%"
-              : isRewards
-              ? "91%"
-              : isMilestone
-              ? "98%"
-              : guide
-              ? "95%"
-              : isTeam
-              ? "95%"
-              : ""
-          }`,
+          backgroundImage: `url(${textTitle === 'HURRAH!!' || textTitle === 'GODLIKE!!' ? congoGifBg : bg})`,
+          minHeight: getMinHeight(),
+          width: getWidth(),
         }}
       >
         <div
@@ -69,15 +70,7 @@ const PopUp = (props) => {
         >
           <img
             src={title}
-            className={`${
-              guide
-                ? "guide-title"
-                : isMilestone
-                ? "info-title"
-                : isTeam
-                ? "teams-title"
-                : "title"
-            }`}
+            className={getTitleClass()}
             style={{ visibility: title ? "visible" : "hidden" }}
           />
         </div>

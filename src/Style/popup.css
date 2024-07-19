@@ -416,3 +416,23 @@
 .overlay .teams-popup .teams-content .scroll-content .team-lb-sc .team-lb-item .right-div .right-rank-div .right-index .rank {
   color: #242728;
 }
+
+/* manually popup font changes  */
+.overlay .successfull-attempts-popup {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.overlay .successfull-attempts-popup .succesfull-attempt-content {
+    font-size: 4vw;
+    left: 9vw;
+    position: absolute;
+    top: 20vw;
+    width: 80%;
+}
+
+.overlay .successfull-attempts-popup .succesfull-attempt-content p {
+    font-size: 2.8vw;
+    line-height: 1.6;
+    text-align: center;
+}
