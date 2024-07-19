@@ -436,3 +436,96 @@
     line-height: 1.6;
     text-align: center;
 }
+
+/* mileStone component css */
+.overlay .milestone {
+    border-collapse: collapse;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: -10vw;
+}
+
+overlay .milestone .milestone-content {
+    font-size: 3vw;
+    height: 96vw;
+    margin: 0 auto;
+    overflow: auto;
+    width: 89%;
+}
+
+.overlay .milestone .milestone-content .milestone-title {
+    align-items: center;
+    border-radius: 20vw;
+    color: #fff;
+    display: flex;
+    height: 9vw;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.overlay .milestone .milestone-content .milestone-title .span1 {
+    margin-left: 3vw;
+}
+
+.overlay .milestone .milestone-content .milestone-title .span2 {
+    margin-right: 7vw;
+}
+
+.overlay .milestone .milestone-content .milestone-contents {
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    margin: 0 auto;
+    position: relative;
+    top: 3vw;
+}
+
+.overlay .milestone .milestone-content .milestone-contents .rew-item {
+    align-items: center;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALYAAAArCAMAAADi1oKrAAAAOVBMVEUAAAATC1MTC1MTC1MTC1MTC1MTC1MTC1MTC1MTC1MTC1MTC1MTC1MTC1MTC1MTC1MTC1MTC1MTC1M43i75AAAAEnRSTlMA8eacD8SFZSITCM9x0MhUU3Ju8tKHAAAA6klEQVRYw93ZWxKDIAwF0AvyVBCb/S+22nZqYZx+53pWwDAhCQkGKU7eGlHEWD/FhD9cWUSppThcc0HVLY9MuDz4ZkU5u2E0T0JgmtFxXij4jB9Z7VMc1YyveRUa6xknFHH9jW98bEKl4cWpz3w963AIQiZg51TXxivmuO6H0CkAaFL2aQGSEEqIQihylZqz5JD0UD0PslrzZkGXtQ8GQon1tkljmzKTrKx5m7RKkvYkpB0ga79N+rsh/Uuy/tzRhErjnkqxzgCRq5Co/aSYpKPy+Q7bhF1Tnwdtu8+mbJeL2qdZ+70k6Rb4CYTHCLtmGF2SAAAAAElFTkSuQmCC);
+    background-size: 100% 100%;
+    color: #fff;
+    display: flex;
+    height: 15vw;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 4vw;
+    width: 92%;
+}
+
+.overlay .milestone .milestone-content .milestone-contents .rew-item .rew {
+    align-items: center;
+    display: flex;
+    gap: 1vw;
+    justify-content: center;
+    width: 24vw;
+}
+
+.overlay .milestone .milestone-content {
+    font-size: 3vw;
+    height: 96vw;
+    margin: 0 auto;
+    overflow: auto;
+    width: 89%;
+}
+
+.overlay .milestone .milestone-content .milestone-contents .rew-item .rew .rew-with-bg {
+    align-items: center;
+    background-image: url('../assests/Rewards-base.png');
+    background-size: 100% 100%;
+    display: flex;
+    height: 10vw;
+    justify-content: center;
+    width: 22vw;
+}
+
+.overlay .milestone .milestone-content .milestone-contents .rew-item .rew .rew-with-bg img {
+    width: 8vw;
+}
+
+.overlay .milestone .milestone-content .milestone-contents .rew-item .rew span {
+    font-size: 2vw;
+}
+
