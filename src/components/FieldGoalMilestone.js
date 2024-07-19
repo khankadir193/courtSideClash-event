@@ -16,6 +16,7 @@ import { baseUrl } from "../ApiCall/ApiComp";
 import Timer from "./Timer";
 import TabComponent from "./TabComponent";
 import SuccessAttemptPopUp from "../popup/SuccessAttemptPopUp";
+import MilestonePopUp from "../popup/MilestonePopUp";
 // import userBtn from "../../assets/images/usersBtn.png";
 // import talentBtn from "../../assets/images/talentBtn.png";
 // import UserSection from "./UserSection";
@@ -240,7 +241,7 @@ export const FieldGoalMilestone = () => {
       <p className="rights">All Rights Reserved</p>
       {/* {progressPopUp ? <PopUp>My popup</PopUp> : ""} */}
       {showSuccessAttemptPopUp ? <SuccessAttemptPopUp /> : ""}
-      {/* {milestonePopUp ? <MilestonePopUp /> : ""} */}
+      {milestonePopUp ? <MilestonePopUp /> : ""}
     </div>
   );
 };
