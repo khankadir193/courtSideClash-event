@@ -35,7 +35,7 @@ export const FieldGoalMilestone = () => {
     isDisabled,
   } = useApi();
   const { weeklyScore } = userInfo;
-  console.log('userInfo...??weeklyScore...',weeklyScore);
+  // console.log('userInfo...??weeklyScore...',weeklyScore);
   const [currentAttempts, setCurrentAttempts] = useState("0vw");
   const test = 2000;
 
