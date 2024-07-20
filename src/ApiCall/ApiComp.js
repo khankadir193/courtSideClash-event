@@ -2,8 +2,8 @@
 export const baseUrl = "http://test.streamkar.tv";
 // export const baseUrl = "https://www.streamkar.net";
 
-export const testUserId = 596492373;
-export const testToken = "A100822987794640908895D732C0723168";
+export const testUserId = 502184262;
+export const testToken = "A18A82F0B476064146A6B23F5BE31DB745";
 
 export const allTeams = [
   {

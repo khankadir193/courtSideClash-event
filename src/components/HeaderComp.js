@@ -3,9 +3,13 @@ import './Header.css';
 import LangDropDownComp from './LangDropDownComp';
 import infoLangMark from '../assests/infoQuestionMark.gif';
 import Guide from '../popup/Guide';  // Import the Guide component
+import { useApi } from '../ApiCall/AppContext';
+
 
 const HeaderComp = () => {
   const [showGuide, setShowGuide] = useState(false);
+  const [chance,setChance]=useState()
+  const {handleChances}= useApi();
 
   const toggleGuide = () => {
     setShowGuide(!showGuide);
@@ -15,6 +19,7 @@ const HeaderComp = () => {
     setShowGuide(false);
   };
 
+  
   return (
     <div className='Header'>
       <LangDropDownComp />
@@ -27,7 +32,7 @@ const HeaderComp = () => {
           </div>
           <div className='chances'>
           <span>Chances :</span>
-          <input type='number' max="999" placeholder='TYPE HERE'/>
+          <input onChange={(e)=> handleChances(e.target.value)} type='number' max="999" placeholder='TYPE HERE'/>
           </div>
       </div>
 
