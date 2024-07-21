@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import {allTeams,testUserId} from './ApiComp';
+import { allTeams, testUserId } from './ApiComp';
 
 // Create the context
 const ApiContext = createContext();
@@ -44,6 +44,23 @@ const AppContext = ({ children }) => {
   });
   const [milestonePopUp, setMilestonePopUp] = useState(false);
   const [isDisabled, setIsDisabled] = useState(false);
+  const [inputValue, setInputValue] = useState(1);
+  const [isInputZero, setIsInputZero] = useState(false);
+  const [rewardWon, setRewardWon] = useState(null);
+  const [thorwBtnOn, setThrowBtnOn] = useState(true);
+  const [beansWon, setBeansWon] = useState(0);
+  const [gameErroCode, setGameErrorCode] = useState(null);
+  const [errMsg, setErrMsg] = useState(false);
+  const [gameError, setGameError] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [rewardsList, setRewardsList] = useState([]);
+  const [rewardsContent, setRewardsContent] = useState("");
+  const [showGamePopUp, setShowGamePopUp] = useState(0);
+  const [gameMsg, setGameMsg] = useState("");
+  const [rewardHistory, setRewardHistory] = useState([]);
+  let [isCombo,setIsCombo] = useState(false);
+
 
   const date = new Date();
   const day = date.getUTCDate().toString().padStart(2, '0');
@@ -51,6 +68,59 @@ const AppContext = ({ children }) => {
   const years = date.getUTCFullYear();
   const dateStr = `${years}-${months}-${day}`;
   const dateStrPrev = `${years}-${months}-${(day - 1).toString().padStart(2, '0')}`;
+
+  //utility function
+  const onChangeHandle = (event) => {
+    let val = event.target.value;
+    let cleaned = val.replace(/\./g, '')
+    const isInteger = /^\d*$/.test(val);
+    if (!val) {
+      setIsInputZero(true);
+    } else {
+      setIsInputZero(false);
+    }
+    if (isInteger) {
+      setInputValue(parseInt(event.target.value));
+    }else{
+      setInputValue(cleaned);
+    }
+  };
+
+  const onUpCheck = (e) => {
+    if (isInputZero) {
+      // setIsDisabled(true);
+      // setRewardWon(null);
+      setThrowBtnOn(false);
+      // setBeansWon(0);
+    }else{
+      // setIsDisabled(false);
+      setThrowBtnOn(true);
+    }
+  
+  
+    let max;
+    if (/[+-.]/.test(e.key)) {
+     e.key.replace('');
+      setInputValue("");
+    } else {
+      // let max = userInfo.throwsLeft < 99 ?  userInfo.throwsLeft : 99;
+      let throws = Math.floor(userInfo.throwsLeft/25000);
+      if (throws <= 999 && throws> 0) {
+        max = throws;
+      } else if (throws > 999) {
+        max = 999;
+      } else if (throws === 0) {
+        max = 1;
+      }
+      if (inputValue > 1) {
+        setIsCombo(true);
+      }else{
+        setIsCombo(false);
+      }
+      let number = inputValue > max ? max : inputValue <= 0 ? "" : inputValue;
+      setInputValue(parseInt(number));
+    }
+  };
 
   //marquee data
   function getGameMarqueeData() {
@@ -73,6 +143,95 @@ const AppContext = ({ children }) => {
       });
   }
 
+  const playGame = () => {
+    if (isDisabled) {
+      return;
+    }
+    setIsDisabled(true);
+    if (!inputValue) {
+      setIsInputZero(true);
+      setIsDisabled(false);
+      return;
+    }
+    setRewardWon(null);
+    setThrowBtnOn(false);
+    setBeansWon(0);
+    fetch(
+      `${baseUrl}/api/activity/courtSide/playGame?playCount=${parseInt(
+        inputValue
+      )}`,
+      {
+        method: "POST",
+
+        headers: {
+          checkTag: "",
+          userId: currentUser.userId,
+          token: currentUser.userToken,
+
+          "Content-Type": "application/json",
+        },
+      }
+    )
+      .then((res) => res.json())
+      .then((res) => {
+        setGameErrorCode(res?.errorCode);
+        setErrMsg(res?.msg);
+        if (res.errorCode === 0) {
+          //window.alert(JSON.stringify(res));
+          setGameError(false);
+          setIsPlaying(true);
+          setRewardWon(res.data.scores);
+          setIsSuccess(res?.data?.rewardDTOList.length);
+          setRewardsList(res?.data?.rewardDTOList);
+          setRewardsContent(res?.data?.rewardMsg);
+          setBeansWon(res.data.totalBeans);
+          setTimeout(() => {
+            setIsPlaying(false);
+            setShowGamePopUp(true);
+            getUserDaily();
+            getWeeklyUser(userInfo.weekIndex);
+            getWeeklyUserPrev(userInfo.weekIndex);
+            getOverallUsers();
+            getGameMarqueeData();
+            getMilestoneMarqueeData();
+            getInfo();
+            getRewardHistory();
+            setThrowBtnOn(true);
+
+            setIsDisabled(false);
+            setInputValue(1);
+          }, 1600);
+        } else if (res.errorCode === 11000003) {
+          setGameError(true);
+
+          setIsPlaying(false);
+          setThrowBtnOn(true);
+          setShowGamePopUp(true);
+          setIsDisabled(false);
+        } else {
+          setGameError(true);
+          setGameMsg(res.msg);
+          setIsPlaying(false);
+          setThrowBtnOn(true);
+          setShowGamePopUp(true);
+          setIsDisabled(false);
+        }
+      })
+      .catch((error) => {
+        console.error("error playing game");
+        setIsDisabled(false);
+      });
+  };
+
+  function getRewardHistory() {
+    fetch(
+      `${baseUrl}/api/activity/eidF/getRecordInfo?eventDesc=20240726_court&rankIndex=21&pageNum=1&pageSize=20&type=1&userId=${currentUser.userId}`
+    )
+      .then((res) => res.json())
+      .then((res) => {
+        setRewardHistory(res?.data?.list);
+      }).catch((err)=>console.log(err));
+  }
   //getUserInfo..
   const getInfo = () => {
     fetch(
@@ -268,6 +427,7 @@ const AppContext = ({ children }) => {
 
     //marqueeData
     getGameMarqueeData();
+    getMilestoneMarqueeData();
 
     //this method i need to put condition for userId
     getInfo();
@@ -295,6 +455,15 @@ const AppContext = ({ children }) => {
     toggleMilestonePopUp: toggleMilestonePopUp,
     isDisabled,
     userInfo: userInfo,
+    //playing game
+    inputValue,
+    onChangeHandle,
+    onUpCheck,
+    isInputZero,
+    thorwBtnOn,
+    isPlaying,
+    playGame
+    
   };
 
   return <ApiContext.Provider value={value}>{children}</ApiContext.Provider>;

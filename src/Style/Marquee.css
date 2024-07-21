@@ -1,0 +1,88 @@
+.d-flex {
+  display: flex;
+}
+.jc-center {
+  justify-content: center;
+}
+.al-center {
+  align-items: center;
+}
+.fd-column {
+  flex-direction: column;
+}
+.fd-row {
+  flex-direction: row;
+}
+
+/* .App {
+  width: 100%;
+  background-image: url(./assets/images/bg.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+} */
+
+/* .App .appHeader {
+  background-image: url("./assets/images/Header-bg.png");
+  background-size: 100%;
+  width: 100%;
+  min-height: calcView(1100);
+  background-repeat: no-repeat;
+  position: relative;
+} */
+
+.gameMarquee {
+  position: relative;
+  top: -40vw;
+  width: 100%;
+}
+
+.gameMarquee .user-item {
+  display: flex;
+  align-items: center;
+  border: calcView(1) solid;
+  border-radius: 5vw;
+  font-size: 1.8vw;
+  padding: 0 2vw;
+  margin-right: 3vw;
+}
+
+.gameMarquee .user-item .marquee-user {
+  width: 5vw;
+  border-radius: 100%;
+  margin-left: -1.8vw;
+}
+
+.gameMarquee .user-item img {
+  width: 3vw;
+}
+
+.gameMarquee .user-item .details {
+  display: flex;
+  align-items: center;
+}
+
+.gameMarquee .user-item .name {
+  margin-left: 0.7vw;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.gameMarquee .user-item .beans {
+  display: flex;
+  align-items: center;
+  margin-left: 2vw;
+}
+
+.gameMarquee .user-item .beans img {
+  width: 5vw;
+}
+
+.gameMarquee .user-item-odd {
+  background: url('../assests/orangeTickertape.png') no-repeat center/100% 100%;
+}
+
+.gameMarquee .user-item-even {
+  background: url('../assests/yellowTickertape.png') no-repeat center/100% 100%;
+}
