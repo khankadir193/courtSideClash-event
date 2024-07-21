@@ -80,14 +80,14 @@
 }
 
 .throw-btn {
-  width: calcView(130);
-  height: calcView(130);
+  width: 17.33vw;
+  height: 17.33vw;
   background-image: url("../assests/throw-button.gif");
   border-radius: 100%;
   background-repeat: no-repeat;
   background-size: contain;
-  bottom: calcView(30);
-  left: calcView(310);
+  bottom: 4vw;
+  left: 41.33vw;
   border: none;
   background-color: transparent;
   position: absolute;
