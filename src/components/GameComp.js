@@ -1,10 +1,19 @@
 import React from 'react';
 import '../Style/GamePlay.css';
 import { useApi } from '../ApiCall/AppContext';
+import noReward from "../assests/default.png"; // i have to put no-rewardimg
+import reward1 from "../assests/basket01.gif";
+import reward2 from "../assests/basket02.gif";
+import reward3 from "../assests/basket03.gif";
+import reward4 from "../assests/basket04.gif";
+import reward5 from "../assests/basket05.gif";
+import reward6 from "../assests/basket06.gif";
+import foreverHeader from "../assests/forever-header.gif";
 
 const GameComp = () => {
     // Destructure values from the useApi hook
-    const { userInfo, inputValue, onChangeHandle, onUpCheck, isInputZero, thorwBtnOn, isPlaying, playGame } = useApi();
+    const { userInfo, inputValue, onChangeHandle, onUpCheck, isInputZero, thorwBtnOn, isPlaying, playGame, rewardWon } = useApi();
+    const allRewards = [noReward, reward1, reward2, reward3, reward4, reward5, reward6];
 
     return (
         <>
@@ -56,6 +65,18 @@ const GameComp = () => {
 
             {/* Decorative throw button */}
             <button className="throw"></button>
+
+            {/* Display the character based on playing state */}
+            {isPlaying ? (
+                <img
+                    src={allRewards[inputValue > 1 ? 2 : rewardWon]}
+                    className="playing-character"
+                />
+            ) : (
+                <img src={foreverHeader} className="playing-character" />
+            )}
+
+            <div id="extraContent"></div>
         </>
     );
 };

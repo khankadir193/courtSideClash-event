@@ -142,16 +142,16 @@
 
 /* here the another css design */
 
-/* .App .appHeader .jumping-character {
+.jumping-character {
   width: 100%;
   position: absolute;
 }
-.App .appHeader .playing-character {
+.playing-character {
   position: absolute;
   width: 97%;
-  top: 2vw;
+  top: 12vw;
 }
-.App .main-tabs {
+/* .App .main-tabs {
   display: flex;
   position: relative;
 }
