@@ -1,0 +1,257 @@
+.d-flex {
+  display: flex;
+}
+.jc-center {
+  justify-content: center;
+}
+.al-center {
+  align-items: center;
+}
+.fd-column {
+  flex-direction: column;
+}
+.fd-row {
+  flex-direction: row;
+}
+
+.gameBtns {
+  position: absolute;
+  bottom: 21vw;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  z-index: 1;
+}
+.gameBtns .throws-left {
+  width: 41vw;
+  height: 9vw;
+  background-image: url("../assests/throws-left.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  color: white;
+  border: none;
+  font-family: "Helvetica";
+  font-size: 3vw;
+}
+
+.gameBtns .inputZero {
+  font-size: 2.5vw;
+  color: red;
+  position: absolute;
+  left: 15vw;
+}
+
+.gameBtns .chances {
+  width: 41vw;
+  height: 9vw;
+  background-image: url("../assests/throws-sent.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Helvetica";
+  font-size: 2.5vw;
+  padding-bottom: 2vw;
+  padding-top: 1vw;
+}
+
+.gameBtns .chances span {
+  margin-top: 1vw;
+}
+
+.gameBtns .chances .inputField {
+  width: 16vw;
+  background-color: #4d92d8;
+  border-radius: calcView(20);
+  border: none;
+  height: 5vw;
+  margin-left: 1vw;
+  font-size: 2.5vw;
+  margin-top: 1vw;
+  padding-left: 1vw;
+  user-select: text;
+  text-align: center;
+  -webkit-user-select: text !important;
+}
+
+.throw-btn {
+  width: calcView(130);
+  height: calcView(130);
+  background-image: url("../assests/throw-button.gif");
+  border-radius: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  bottom: calcView(30);
+  left: calcView(310);
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  z-index: 1;
+}
+
+.thrown {
+  filter: grayscale(100%);
+  width: calcView(130);
+  height: calcView(130);
+  background-image: url("../assests/throw-button.png");
+  border-radius: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  bottom: calcView(30);
+  left: calcView(310);
+  border: none;
+  background-color: transparent;
+  position: absolute;
+}
+
+.App .appHeader .blackNwhite {
+  filter: grayscale(100%);
+}
+
+.hand {
+  background-image: url('../assests/handIcon.gif');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 12vw;
+  height: 12vw;
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  bottom: 4vw;
+  left: 52vw;
+  z-index: 1;
+}
+
+.throw {
+  width: 23vw;
+  height: 8vw;
+  background-image: url("../assests/throw.gif");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  bottom: 22vw;
+  left: 43vw;
+}
+
+/* here the another css design */
+
+/* .App .appHeader .jumping-character {
+  width: 100%;
+  position: absolute;
+}
+.App .appHeader .playing-character {
+  position: absolute;
+  width: 97%;
+  top: 2vw;
+}
+.App .main-tabs {
+  display: flex;
+  position: relative;
+}
+.App .main-tabs .dunkers {
+  width: 54vw;
+  padding: 6.5vw 0 9.5vw;
+  background-image: url(./assets/images/My-teams-bg.png);
+  background-size: 100% 100%;
+  font-size: 2.8vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 38vw;
+  font-family: "HiJack";
+  margin: auto;
+  margin-top: -4vw;
+}
+.App .main-tabs .tab-btn-field-goal {
+  width: calcView(240);
+  height: calcView(120);
+  background-image: url("./assets/images/dunk-milestone-select-btn.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: transparent;
+  border: none;
+}
+.App .main-tabs .tab-btn-growth-acc {
+  width: calcView(240);
+  height: calcView(120);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: transparent;
+  border: none;
+}
+.App .main-tabs .tab-btn-gift-leaderbrd {
+  width: calcView(240);
+  height: calcView(120);
+  background-image: url("./assets/images/gifting-selected.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: transparent;
+  border: none;
+}
+.App .main-tabs .tab-btn-field-goal-off {
+  width: calcView(240);
+  height: calcView(120);
+  background-image: url("./assets/images/dunk-milestone-unselect-btn.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: transparent;
+  border: none;
+}
+.App .main-tabs .tab-btn-growth-acc-off {
+  width: calcView(240);
+  height: calcView(120);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: transparent;
+  border: none;
+}
+.App .main-tabs .tab-btn-gift-leaderbrd-off {
+  width: calcView(240);
+  height: calcView(120);
+  background-image: url("./assets/images/gifting-unsleceted.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: transparent;
+  border: none;
+}
+#extraContent {
+  height: 0px;
+  width: 0px;
+  position: absolute;
+  z-index: -2147483648;
+  content: url("./assets/images/no-reward.gif") url("./assets/images/basket01.gif") url("./assets/images/basket02.gif") url("./assets/images/basket03.gif") url("./assets/images/basket04.gif") url("./assets/images/basket05.gif") url("./assets/images/basket06.gif");
+  visibility: hidden;
+  top: 0px;
+}
+.noData {
+  text-align: center;
+  margin-top: 32vw;
+  font-family: "HiJack";
+}
+.scroll-btn {
+  background-image: url("./assets/images/scroll-btn.png");
+  width: 10vw;
+  height: 9vw;
+  background-size: 100% 100%;
+  border: none;
+  z-index: 1;
+} */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+button {
+  background: transparent;
+  border: none;
+  outline: none;
+  box-shadow: none !important;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
