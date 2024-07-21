@@ -56,8 +56,8 @@
   justify-content: center;
   font-family: "Helvetica";
   font-size: 2.5vw;
-  padding-bottom: 2vw;
-  padding-top: 1vw;
+  /* padding-bottom: 2vw; */
+  /* padding-top: 1vw; */
 }
 
 .gameBtns .chances span {
