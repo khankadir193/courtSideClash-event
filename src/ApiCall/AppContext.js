@@ -268,6 +268,7 @@ const AppContext = ({ children }) => {
 
     //marqueeData
     getGameMarqueeData();
+    getMilestoneMarqueeData();
 
     //this method i need to put condition for userId
     getInfo();
