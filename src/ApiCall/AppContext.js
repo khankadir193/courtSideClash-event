@@ -465,7 +465,15 @@ const AppContext = ({ children }) => {
     thorwBtnOn,
     isPlaying,
     playGame,
-    rewardWon
+    rewardWon,
+    showGamePopUp,
+    beansWon,
+    gameErroCode,
+    errMsg,
+    rewardsList,
+    rewardsContent,
+    isCombo,
+    isSuccess
     
   };
 

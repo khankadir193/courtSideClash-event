@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "../Style/popup.css";
-import congoGifBg from '../assests/default.png'; //here should cong image
+import congoGifBg from '../assests/game-popup.gif'; //here should cong image
 
 const PopUp = (props) => {
   const {
