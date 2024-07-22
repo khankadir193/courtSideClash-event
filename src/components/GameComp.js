@@ -14,7 +14,7 @@ const GameComp = () => {
     // Destructure values from the useApi hook
     const { userInfo, inputValue, onChangeHandle, onUpCheck, isInputZero, thorwBtnOn, isPlaying, playGame, rewardWon } = useApi();
     const allRewards = [noReward, reward1, reward2, reward3, reward4, reward5, reward6];
-    console.log('throwBtnOn...?',thorwBtnOn);
+    console.log('rewardWon......?',rewardWon);
 
     return (
         <>

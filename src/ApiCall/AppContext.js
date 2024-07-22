@@ -165,15 +165,17 @@ const AppContext = ({ children }) => {
 
         headers: {
           checkTag: "",
-          userId: currentUser.userId,
-          token: currentUser.userToken,
-
+          // userId: currentUser.userId,
+          // token: currentUser.userToken,
+          userId:'502184262',
+          token:'A140F20F2AAE2B45B2BD0E3408FC2F0883',
           "Content-Type": "application/json",
         },
       }
     )
       .then((res) => res.json())
       .then((res) => {
+        console.log('result...??',res);
         setGameErrorCode(res?.errorCode);
         setErrMsg(res?.msg);
         if (res.errorCode === 0) {
@@ -462,7 +464,8 @@ const AppContext = ({ children }) => {
     isInputZero,
     thorwBtnOn,
     isPlaying,
-    playGame
+    playGame,
+    rewardWon
     
   };
 
