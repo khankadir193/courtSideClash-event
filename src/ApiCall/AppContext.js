@@ -122,6 +122,10 @@ const AppContext = ({ children }) => {
     }
   };
 
+  const toggleGamePopUp = () => {
+    setShowGamePopUp(0);
+  };
+
   //marquee data
   function getGameMarqueeData() {
     fetch(
@@ -473,8 +477,8 @@ const AppContext = ({ children }) => {
     rewardsList,
     rewardsContent,
     isCombo,
-    isSuccess
-    
+    isSuccess,
+    toggleGamePopUp
   };
 
   return <ApiContext.Provider value={value}>{children}</ApiContext.Provider>;
