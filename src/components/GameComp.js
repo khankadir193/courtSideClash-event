@@ -9,11 +9,13 @@ import reward4 from "../assests/basket04.gif";
 import reward5 from "../assests/basket05.gif";
 import reward6 from "../assests/basket06.gif";
 import foreverHeader from "../assests/forever-header.gif";
+import GamePopUp from '../popup/GamePopUp';
 
 const GameComp = () => {
     // Destructure values from the useApi hook
-    const { userInfo, inputValue, onChangeHandle, onUpCheck, isInputZero, thorwBtnOn, isPlaying, playGame, rewardWon } = useApi();
+    const { userInfo, inputValue, onChangeHandle, onUpCheck, isInputZero, thorwBtnOn, isPlaying, playGame, rewardWon,showGamePopUp,beansWon,gameErroCode,errMsg,rewardsList,rewardsContent,isCombo,isSuccess } = useApi();
     const allRewards = [noReward, reward1, reward2, reward3, reward4, reward5, reward6];
+    console.log('rewardWon......?', rewardWon);
 
     return (
         <>
@@ -77,6 +79,36 @@ const GameComp = () => {
             )}
 
             <div id="extraContent"></div>
+
+            {showGamePopUp ? (
+                <GamePopUp
+                    textTitle={"Sample Title"}
+                    // content={
+                    //   gameError === true
+                    //     ? gameMsg
+                    //     : rewardWon > 0
+                    //     ? "That was a perfect throw and you have won"
+                    //     : rewardWon === 0
+                    //     ? "Uh-Oh! The throw was unsuccessful. Please try again."
+                    //     : userInfo.throwsLeft <= 0
+                    //     ? "To earn a throwing chance spend 25k beans worth event gifts and start playing. We're waiting to see you play. Come soon!"
+                    //     : ""
+                    // }
+                    beans={beansWon}
+                    throwsLeft={Math.floor(userInfo.throwsLeft / 25000) > 0 ? true : false}
+                    gameErroCode={gameErroCode}
+                    errMsg={errMsg}
+                    rewardsList={rewardsList}
+                    rewardWon={rewardWon}
+                    rewardsContent={rewardsContent}
+                    isCombo={isCombo}
+                    notPoints={gameErroCode === 10000004 ? true : false}
+                    isSuccess={isSuccess}
+                    inputValue={inputValue}
+                />
+            ) : (
+                ""
+            )}
         </>
     );
 };
