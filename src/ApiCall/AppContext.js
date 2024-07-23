@@ -24,6 +24,7 @@ const AppContext = ({ children }) => {
     weeklyTeamUserRanking: [],
     overallTeamUsersRanking: [],
   });
+  const [progressPopUp, setProgressPopUp] = useState(0);
   const [marqueeData, setMarqueeData] = useState({
     game: [],
     milestone: [],
@@ -126,6 +127,10 @@ const AppContext = ({ children }) => {
     setShowGamePopUp(0);
   };
 
+  const toggleProgressPopUp = () => {
+    setProgressPopUp((prevState) => !prevState);
+  };
+
   //marquee data
   function getGameMarqueeData() {
     fetch(
@@ -172,7 +177,7 @@ const AppContext = ({ children }) => {
           // userId: currentUser.userId,
           // token: currentUser.userToken,
           userId:'550002950',
-          token:'A1FFDF0E61A6544AECBC713C9BF35FBD91',
+          token:'A192B9B70F5DB344A68DDAE74A2F579A3D',
           "Content-Type": "application/json",
         },
       }
@@ -478,7 +483,10 @@ const AppContext = ({ children }) => {
     rewardsContent,
     isCombo,
     isSuccess,
-    toggleGamePopUp
+    toggleGamePopUp,
+    // popup
+    progressPopUp,
+    toggleProgressPopUp
   };
 
   return <ApiContext.Provider value={value}>{children}</ApiContext.Provider>;
