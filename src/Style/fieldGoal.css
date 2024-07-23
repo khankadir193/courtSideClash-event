@@ -197,6 +197,7 @@
   width: 6.6666666667vw;
   position: absolute;
   top: -2vw;
+  left: 0;
 }
 
 .fieldGoalSection .successfull-attempts .progressBarSection .progressBar .innerProgress .line .completed {
