@@ -35,12 +35,18 @@
   justify-content: center;
   position: absolute;
   left: 12%;
+  z-index: 999;
 }
 
 .guide-header img {
   width: 100%;
 }
-
+.guide-content{
+  overflow-y: auto;
+  height: 110vw;
+  position: relative;
+  top: -7vw;
+}
 .guide-content .event-gifts {
   background: url("../assests/Rewards-bg.png") center / 100% 100% no-repeat;
   height: 15rem;
@@ -71,11 +77,11 @@
   width: 4.5rem;
   top: 0;
 }
-.event-gifts .title{
+.event-gifts .title {
   color: #fff;
   font-size: 1rem;
   margin-top: 0.5rem;
-  font-weight:700;
+  font-weight: 700;
   text-transform: uppercase;
 }
 .event-gifts .gift1 {
@@ -154,12 +160,66 @@
   font-weight: 700;
 }
 
-.gift3Detail div{
+.gift3Detail div {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-left: 1.25rem;
 }
-.gift3Detail div img{
+.gift3Detail div img {
   width: 1rem;
+}
+
+/* ---- Guide content styling ---- */
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  height: 3.5rem;
+}
+
+.howtoPlay,
+.rewardInfo {
+  width: 35%;
+  height: 2rem;
+  position: relative;
+}
+
+.howtoPlay img,
+.rewardInfo img {
+  width: 100%;
+  height: 100%;
+}
+
+.howtoPlay span {
+  position: absolute;
+  color: #fff;
+  transform: translate(1.65rem, 0.45rem);
+}
+
+.rewardInfo span {
+  position: absolute;
+  color: #fff;
+  transform: translate(1.65rem, 0.45rem);
+}
+
+.opacity-100 {
+  opacity: 1;
+}
+.opacity-50 {
+  opacity: 0.5;
+}
+
+.Tabcontent {
+  background: url("../assests/content-bg.png") center / 100% 100% no-repeat;
+  height: 76vw;
+  height: 76vw;
+  line-height: 4vw;
+  margin: 2vw auto 0;
+  overflow-y: auto;
+  padding: 2vw;
+  width: 90%;
+  font-size: 2.8vw;
 }
