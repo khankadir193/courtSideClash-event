@@ -54,8 +54,8 @@ function GamePopUp(props) {
              <div>That was a perfect throw and you've won  {rewardsContent} <img className="w-10 v-align-middle" src={bean} alt="" /></div> 
           </div>
         ) : isSuccess && isCombo && gameErroCode === 0 ? (
-          <div className="game-content" style={{width: '80%',left: '9vw',top: '38vw'}}>
-           <div> Showcasing your incredible skills, you've scored & won <br/>{rewardWon > 1 ? rewardWon+' baskets ':rewardWon+' basket '} <img className="w-10 v-align-middle" src={basketIcon} alt="" /> + { rewardsContent} <img className="w-10 v-align-middle" src={bean} alt="" />. Well done!</div>
+          <div className="game-content-success">
+           <div className="mt"> Showcasing your incredible skills, you've scored & won <br/>{rewardWon > 1 ? rewardWon+' baskets ':rewardWon+' basket '} <img className="w-10 v-align-middle" src={basketIcon} alt="" /> + { rewardsContent} <img className="w-10 v-align-middle" src={bean} alt="" />. Well done!</div>
           </div>
         ) : notPoints ? (
           <div className="game-content">

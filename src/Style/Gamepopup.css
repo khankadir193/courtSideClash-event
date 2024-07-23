@@ -2,7 +2,7 @@
     position: relative;
 }
 
-.overlay .game .textTitle {
+.game .textTitle {
     font-family: HiJack;
     font-size: 5vw;
     position: relative;
@@ -10,7 +10,7 @@
     top: 3vw;
 }
 
-.overlay .game .game-content {
+.game .game-content {
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -38,4 +38,25 @@
     border: none;
     box-shadow: none !important;
     outline: none;
+}
+
+/* success popup design */
+.game .game-content-success {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-size: 3.5vw;
+    left: 16vw;
+    position: absolute;
+    text-align: center;
+    /* top: 21vw; */
+    width: 49%;
+} 
+
+.v-align-middle{
+    width: 13%;
+}
+
+.mt{
+    margin-top: 3rem;
 }
