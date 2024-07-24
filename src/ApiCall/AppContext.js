@@ -61,6 +61,8 @@ const AppContext = ({ children }) => {
   const [gameMsg, setGameMsg] = useState("");
   const [rewardHistory, setRewardHistory] = useState([]);
   let [isCombo,setIsCombo] = useState(false);
+  const [showRewardHistory, setShowRewardHistory] = useState(0);
+  const [showGuide, setShowGuide] = useState(0);
 
 
   const date = new Date();
@@ -295,6 +297,14 @@ const AppContext = ({ children }) => {
     setMilestonePopUp((prev) => !prev);
   };
 
+  const toggleRewardsHistory = () => {
+    setShowRewardHistory(0);
+  };
+
+  const toggleGuide = () => {
+    setShowGuide(0);
+  };
+
   // Function to fetch leaderboard data and update state
   const fetchData = async (url, key) => {
     try {
@@ -486,7 +496,12 @@ const AppContext = ({ children }) => {
     toggleGamePopUp,
     // popup
     progressPopUp,
-    toggleProgressPopUp
+    toggleProgressPopUp,
+    rewardHistory,
+    showGuide,
+    showRewardHistory,
+    toggleGuide,
+    toggleRewardsHistory
   };
 
   return <ApiContext.Provider value={value}>{children}</ApiContext.Provider>;

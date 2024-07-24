@@ -5,6 +5,7 @@ import infoLangMark from '../assests/infoQuestionMark.gif';
 import Guide from '../popup/Guide';  // Import the Guide component
 import TickerTape from './TickerTape';
 import GameComp from './GameComp';
+import GuideRewardComp from './GuideRewardComp';
 
 const HeaderComp = () => {
   const [showGuide, setShowGuide] = useState(false);
@@ -39,10 +40,13 @@ const HeaderComp = () => {
 
 
         {/* <LangDropDownComp /> */}
-        <button className='guideBtn' onClick={toggleGuide}>
+        {/* <button className='guideBtn' onClick={toggleGuide}>
           <img src={infoLangMark} alt='infoLangMark' />
-        </button>
-        {showGuide && <Guide onClose={closeGuide} />} {/* Conditionally render the Guide component */}
+        </button> */}
+        {/* {showGuide && <Guide onClose={closeGuide} />} Conditionally render the Guide component */}
+
+        {/* new ways guide reward component popup */}
+        <GuideRewardComp />
       </div>
     </>
 
