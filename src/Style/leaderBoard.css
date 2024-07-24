@@ -194,3 +194,7 @@
   background-color: transparent;
   border: none;
 }
+
+.scroll {
+    overflow-y: scroll !important;
+}

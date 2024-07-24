@@ -48,6 +48,7 @@ const LeaderboardComp = ({ isTalent, selTabs }) => {
   const divRef = useRef(null);
   const [restWinners, setRestWinners] = useState(milestoneRankingData);
   const [isSeeMore, setIsSeeMore] = useState(1);
+  let [estLimit , setEstLimit] = useState(0);
   const shouldIShowTeams = () => {
     if (!isTalent) {
       if (selTabs.overall || selTabs.weekly) return true;
@@ -79,6 +80,7 @@ const LeaderboardComp = ({ isTalent, selTabs }) => {
     if (isTalent) {
       if (selTabs.overall) {
         setSelectedData(talentOverall);
+        setEstLimit(5)
       } else if (selTabs.weekly) {
         if (tabs.cuurent) {
           setSelectedData(talentWeekly);
@@ -104,8 +106,10 @@ const LeaderboardComp = ({ isTalent, selTabs }) => {
       } else {
         if (tabs.cuurent) {
           setSelectedData(userDaily);
+          setEstLimit(7);
         } else {
           setSelectedData(userDailyPrev);
+          setEstLimit(7);
         }
       }
     }
@@ -156,7 +160,7 @@ const LeaderboardComp = ({ isTalent, selTabs }) => {
               user={user}
               index={index}
               isTalent={isTalent}
-              // estLimit={(index < estLimit )? true : false}
+              estLimit={(index < estLimit )? true : false}
               isPrev={tabs.prev}
               // isEstRewards={isEstRewards}
               // estRew={calculateEstRewards(index , (!isTalent && !selTabs.weekly && tabs.prev) , user?.userScore ,  (isTalent && !selTabs.weekly   && selTabs.overall ))}
