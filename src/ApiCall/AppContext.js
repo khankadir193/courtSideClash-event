@@ -60,7 +60,41 @@ const AppContext = ({ children }) => {
   const [showGamePopUp, setShowGamePopUp] = useState(0);
   const [gameMsg, setGameMsg] = useState("");
   const [rewardHistory, setRewardHistory] = useState([]);
-  let [isCombo,setIsCombo] = useState(false);
+  let [isCombo, setIsCombo] = useState(false);
+
+  useEffect(() => {
+    const fetchUserInfo = async () => {
+      try {
+        if (window.phone && typeof window.phone.getUserInfo === "function") {
+          window.phone.getUserInfo((userInfo) => {
+            if (userInfo) {
+              setCurrentUser({
+                userId: userInfo.userId > 0 ? userInfo.userId : 0,
+                userToken: userInfo.token || null,
+              });
+            } else {
+              setCurrentUser({
+                userId: 0,
+                userToken: null,
+              });
+            }
+          });
+        } else {
+          throw new Error("window.phone.getUserInfo is not available");
+        }
+      } catch (error) {
+        setCurrentUser({
+          userId: 0,
+          userToken: null,
+        });
+        console.error("Error fetching user info:", error);
+      }
+    };
+
+    fetchUserInfo();
+    getInfo();
+  }, []);
+
 
 
   const date = new Date();
@@ -82,7 +116,7 @@ const AppContext = ({ children }) => {
     }
     if (isInteger) {
       setInputValue(parseInt(event.target.value));
-    }else{
+    } else {
       setInputValue(cleaned);
     }
   };
@@ -93,20 +127,20 @@ const AppContext = ({ children }) => {
       // setRewardWon(null);
       setThrowBtnOn(false);
       // setBeansWon(0);
-    }else{
+    } else {
       // setIsDisabled(false);
       setThrowBtnOn(true);
     }
-  
-  
+
+
     let max;
     if (/[+-.]/.test(e.key)) {
-     e.key.replace('');
+      e.key.replace('');
       setInputValue("");
     } else {
       // let max = userInfo.throwsLeft < 99 ?  userInfo.throwsLeft : 99;
-      let throws = Math.floor(userInfo.throwsLeft/25000);
-      if (throws <= 999 && throws> 0) {
+      let throws = Math.floor(userInfo.throwsLeft / 25000);
+      if (throws <= 999 && throws > 0) {
         max = throws;
       } else if (throws > 999) {
         max = 999;
@@ -115,7 +149,7 @@ const AppContext = ({ children }) => {
       }
       if (inputValue > 1) {
         setIsCombo(true);
-      }else{
+      } else {
         setIsCombo(false);
       }
       let number = inputValue > max ? max : inputValue <= 0 ? "" : inputValue;
@@ -174,17 +208,17 @@ const AppContext = ({ children }) => {
 
         headers: {
           checkTag: "",
-          // userId: currentUser.userId,
-          // token: currentUser.userToken,
-          userId:'550002950',
-          token:'A172A7E66C5448459D8891953C40B63CD7',
+          userId: currentUser.userId,
+          token: currentUser.userToken,
+          // userId: '550002950',
+          // token: 'A172A7E66C5448459D8891953C40B63CD7',
           "Content-Type": "application/json",
         },
       }
     )
       .then((res) => res.json())
       .then((res) => {
-        console.log('result...??',res);
+        console.log('result...??', res);
         setGameErrorCode(res?.errorCode);
         setErrMsg(res?.msg);
         if (res.errorCode === 0) {
@@ -241,7 +275,7 @@ const AppContext = ({ children }) => {
       .then((res) => res.json())
       .then((res) => {
         setRewardHistory(res?.data?.list);
-      }).catch((err)=>console.log(err));
+      }).catch((err) => console.log(err));
   }
   //getUserInfo..
   const getInfo = () => {
