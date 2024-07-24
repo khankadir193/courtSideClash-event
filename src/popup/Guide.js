@@ -20,6 +20,7 @@ const Guide = ({ onClose }) => {
   const items = [
     {
       title: 'Daily  Leaderboard',
+      src:"",
       content: 'This is dailyLeaderboard.',
     },
     {

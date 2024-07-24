@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './RewardInfo.css';
-import TabComponent from '../components/TabComponent';
+
 
 const Accordion = ({ items }) => {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -22,7 +22,6 @@ const Accordion = ({ items }) => {
           {item.title}
         </div>
         <div className={`content ${active}`}>
-          <TabComponent/>
           <p>{item.content}</p>
         </div>
       </React.Fragment>
