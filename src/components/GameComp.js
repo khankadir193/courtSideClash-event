@@ -83,17 +83,6 @@ const GameComp = () => {
             {showGamePopUp ? (
                 <GamePopUp
                     textTitle={"Sample Title"}
-                    // content={
-                    //   gameError === true
-                    //     ? gameMsg
-                    //     : rewardWon > 0
-                    //     ? "That was a perfect throw and you have won"
-                    //     : rewardWon === 0
-                    //     ? "Uh-Oh! The throw was unsuccessful. Please try again."
-                    //     : userInfo.throwsLeft <= 0
-                    //     ? "To earn a throwing chance spend 25k beans worth event gifts and start playing. We're waiting to see you play. Come soon!"
-                    //     : ""
-                    // }
                     beans={beansWon}
                     throwsLeft={Math.floor(userInfo.throwsLeft / 25000) > 0 ? true : false}
                     gameErroCode={gameErroCode}

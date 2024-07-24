@@ -50,7 +50,7 @@ function GamePopUp(props) {
         <p className={`textTitle ${getTitle() == 'GODLIKE!!' || getTitle() == 'HURRAH!!'  ? 'textTitle-congo' : '' }`} >{getTitle()}</p>
 
         {isSuccess && !isCombo && gameErroCode === 0 ? (
-          <div className="game-content" style={{width: '80%',left: '9vw',top: '38vw'}}>
+          <div className="game-content-beans">
              <div>That was a perfect throw and you've won  {rewardsContent} <img className="w-10 v-align-middle" src={bean} alt="" /></div> 
           </div>
         ) : isSuccess && isCombo && gameErroCode === 0 ? (
