@@ -527,5 +527,7 @@ overlay .milestone .milestone-content {
 
 .overlay .milestone .milestone-content .milestone-contents .rew-item .rew span {
     font-size: 2vw;
+    text-align: start;
+    font-weight: bold;
 }
 
