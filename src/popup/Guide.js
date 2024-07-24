@@ -1,14 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Guide.css";
+import RewardInfo from "../popup/RewardInfo";
 import guideHeader from "../assests/Guide bannr.png";
+import howToPlay from "../assests/howToPlay.png";
+import rewardInfoTab from "../assests/rewardInfo.png";
 import basketball from "../assests/gift-basketball.gif";
 import skBillionare from "../assests/skBillionare.png";
 import lootChest from "../assests/loot-chest.png";
 import cheerleader from "../assests/cheerleader.png";
 import closeBtn from "../assests/close-btn.png";
 import beanIcon from "../assests/bean.png";
+import HowToPlay from "./HowToPlay";
+
+
+
 
 const Guide = ({ onClose }) => {
+  const [activeTab, setActiveTab] = useState("howToPlay");
+  const items = [
+    {
+      title: 'Daily  Leaderboard',
+      content: 'This is dailyLeaderboard.',
+    },
+    {
+      title: 'Weekly Leaderboard',
+      content: 'This is Weekly LeaderBoard',
+    },
+    {
+      title: 'Overall Leaderboard',
+      content: 'This is Overall Leaderboard',
+    },
+    {
+      title: 'Dunk-Milestone Leaderboard',
+      content: 'This is Dunk-milestone Leaderboard',
+    }
+  ];
   return (
     <div className="guide-overlay">
       <div className="guide-modal">
@@ -50,12 +76,34 @@ const Guide = ({ onClose }) => {
             </div>
           </div>
           <div class="tabs">
-            <button class="howToPlay false" name="howToPlay">
-              HOW TO PLAY
+            <button
+              className={`howtoPlay ${
+                activeTab === "howToPlay" ? "opacity-100" : "opacity-50"
+              }`}
+              onClick={() => setActiveTab("howToPlay")}
+            >
+              <span>How To Play</span>
+
+              <img src={howToPlay} alt="howtoPlay Tab" />
             </button>
-            <button class="rewardInfo unactive" name="rewardInfo">
-              Reward Info
+
+            <button
+              className={`rewardInfo ${
+                activeTab === "rewardInfo" ? "opacity-100" : "opacity-50"
+              }`}
+              onClick={() => setActiveTab("rewardInfo")}
+            >
+              <span>Reward Info</span>
+
+              <img src={rewardInfoTab} alt="Reward Tab" />
             </button>
+          </div>
+          <div className="Tabcontent">
+            {activeTab === "howToPlay" ? (
+              <HowToPlay/>
+            ) : (
+              <RewardInfo items={items}/>
+            )}
           </div>
         </div>
       </div>

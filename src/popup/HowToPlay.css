@@ -1,0 +1,17 @@
+.HtpContent {
+  color: #fff;
+}
+.HtpContent h4 {
+  text-align: left;
+}
+.yellow-text {
+  background-color: #ff0;
+  color: #000;
+}
+
+.HtpContent ul {
+  text-align: left;
+}
+.HtpContent ul li {
+  list-style-type: disc;
+}
