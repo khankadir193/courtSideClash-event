@@ -6,6 +6,7 @@ import TabComponent from './components/TabComponent';
 import AppContext from './ApiCall/AppContext';
 import { FieldGoalMilestone } from './components/FieldGoalMilestone';
 import TickerTape from './components/TickerTape';
+import ScrollToTopButton from './components/ScrollToTop';
 // const { getTalentWeeklyPrev,lbData } = useApi();
 
 
@@ -14,6 +15,7 @@ function App() {
       <div className='App'>
         <HeaderComp />
         <FieldGoalMilestone />
+        <ScrollToTopButton />
         {/* <TickerTape /> */}
       {/* <pre>{JSON.stringify(lbData, null, 2)}</pre> */}
       </div>
