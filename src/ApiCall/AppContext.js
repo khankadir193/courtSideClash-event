@@ -61,6 +61,7 @@ const AppContext = ({ children }) => {
   const [gameMsg, setGameMsg] = useState("");
   const [rewardHistory, setRewardHistory] = useState([]);
   let [isCombo, setIsCombo] = useState(false);
+  const [showRewardHistory, setShowRewardHistory] = useState(0);
 
   useEffect(() => {
     const fetchUserInfo = async () => {
@@ -119,6 +120,11 @@ const AppContext = ({ children }) => {
     } else {
       setInputValue(cleaned);
     }
+  };
+
+  const toggleRewardsHistory = () => {
+    console.log('closeButton...???');
+    setShowRewardHistory(0);
   };
 
   const onUpCheck = (e) => {
@@ -520,7 +526,9 @@ const AppContext = ({ children }) => {
     toggleGamePopUp,
     // popup
     progressPopUp,
-    toggleProgressPopUp
+    toggleProgressPopUp,
+    toggleRewardsHistory,
+    rewardHistory
   };
 
   return <ApiContext.Provider value={value}>{children}</ApiContext.Provider>;
