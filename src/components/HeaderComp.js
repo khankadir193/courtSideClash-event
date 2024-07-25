@@ -48,14 +48,23 @@ const HeaderComp = () => {
 
 
         {/* <LangDropDownComp /> */}
-        <button className='guideBtn' onClick={toggleGuide}>
-          <img src={infoLangMark} alt='infoLangMark' />
-        </button>
-        <button
-          className="rewardBtn"
-          onClick={() => setShowRewardHistory(1)}
-          disabled={isDisabled}
-        ></button>
+
+        <div className="infoAndRewards">
+          <div>
+            <button className='guideBtn' onClick={toggleGuide}>
+              <img src={infoLangMark} alt='infoLangMark' />
+            </button>
+          </div>
+          <div>
+            <button
+              className="rewardBtn"
+              onClick={() => setShowRewardHistory(1)}
+              disabled={isDisabled}
+            ></button>
+          </div>
+
+        </div>
+
         {showGuide && <Guide onClose={closeGuide} />} {/* Conditionally render the Guide component */}
         {showRewardHistory ? <RewardHistory /> : ""}
       </div>

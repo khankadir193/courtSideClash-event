@@ -123,6 +123,7 @@ const AppContext = ({ children }) => {
   };
 
   const toggleRewardsHistory = () => {
+    console.log('closeButton...???');
     setShowRewardHistory(0);
   };
 
