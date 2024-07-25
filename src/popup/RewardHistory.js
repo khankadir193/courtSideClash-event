@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import PopUp from "../popup/Popup.js";
 import titleBanner from "../assests/reward-records.png";
 import bg from "../assests/task-game-bg2.png";
@@ -7,9 +7,9 @@ import { RewardHistoryItem } from "../popup/RewardHistoryItem.js";
 import { useApi } from "../ApiCall/AppContext.js";
 
 
-export const RewardHistory = () => {
-    const {toggleRewardsHistory, rewardHistory} = useApi();
-    
+export const RewardHistory = ({ toggleRewardsHistory, rewardHistory }) => {
+    // const {toggleRewardsHistory, rewardHistory} = useApi();
+
 
     return (
         <PopUp

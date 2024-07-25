@@ -13,6 +13,7 @@ const HeaderComp = () => {
   const [showGuide, setShowGuide] = useState(false);
   const [isDisabled, setIsDisabled] = useState(false);
   const [showRewardHistory, setShowRewardHistory] = useState(0);
+  const [rewardHistory, setRewardHistory] = useState([]);
 
   const toggleGuide = () => {
     setShowGuide(!showGuide);
@@ -66,7 +67,7 @@ const HeaderComp = () => {
         </div>
 
         {showGuide && <Guide onClose={closeGuide} />} {/* Conditionally render the Guide component */}
-        {showRewardHistory ? <RewardHistory /> : ""}
+        {showRewardHistory ? <RewardHistory toggleRewardsHistory={toggleRewardsHistory} rewardHistory={rewardHistory} /> : ""}
       </div>
     </>
 
