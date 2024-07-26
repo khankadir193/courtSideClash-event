@@ -7,11 +7,11 @@ import { RewardHistoryItem } from "../popup/RewardHistoryItem.js";
 import { useApi } from "../ApiCall/AppContext.js";
 
 
+// Component to display the reward history in a popup
 export const RewardHistory = ({ toggleRewardsHistory, rewardHistory }) => {
-    // const {toggleRewardsHistory, rewardHistory} = useApi();
-
 
     return (
+        // Using the PopUp component to display the reward history with a custom title and background
         <PopUp
             title={titleBanner}
             bg={bg}
@@ -19,13 +19,16 @@ export const RewardHistory = ({ toggleRewardsHistory, rewardHistory }) => {
             isRewards={true}
         >
             <div className="rewardHistoryPopUp">
+                {/* Header section for the rewards table */}
                 <div className="rewardsTitle">
-                    <div className="">Time</div>
-                    <div className="">Rewards</div>
+                    <div className="column">Time</div>
+                    <div className="column">Rewards</div>
                 </div>
-                {rewardHistory?.length ? (
+                
+                {/* Conditionally render reward history or a 'No Data Found!' message */}
+                {rewardHistory && rewardHistory.length > 0 ? (
                     <div className="rewardWrapper">
-                        {rewardHistory?.map((rewardItem, index) => (
+                        {rewardHistory.map((rewardItem, index) => (
                             <RewardHistoryItem key={index} rewardItem={rewardItem} />
                         ))}
                     </div>
