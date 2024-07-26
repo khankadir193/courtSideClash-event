@@ -1,74 +1,41 @@
-import React, { useEffect, useState } from "react";
-// import ball from "../assets/images/completed.png";
-// import fieldGoal from "../assets/images/feild-goal-icon.png";
-import { rewGet } from "../ApiCall/imageContext";
-export const RewardHistoryItem = (props) => {
-  const { rewardItem } = props;
+import React from "react";
+import { rewGet } from "../ApiCall/imageContext"; // Function to get image paths based on reward description
+
+// Component to display each reward history item
+export const RewardHistoryItem = ({ rewardItem }) => {
+  // Extracting date and time from rewardItem.time
+  const date = rewardItem?.time?.split("T")[0];
+  const time = rewardItem?.time?.split("T")[1]?.split(".")[0];
+
+  // Render the component
   return (
     <div className="historyItem">
+      {/* Display the date and time of the reward */}
       <div className="time">
-        <p className="date">{rewardItem?.time?.split("T")[0]}</p>
-        <p className="hours">
-          {rewardItem?.time?.split("T")[1]?.split(".")[0]}
-        </p>
+        <p className="date">{date}</p>
+        <p className="hours">{time}</p>
       </div>
-      {/* <div className="rewardType"> */}
-        {/* <img
-          src={
-            rewardItem?.rewardType == "1"
-              ? ball
-              : rewardItem?.rewardType == "1"
-              ? fieldGoal
-              : fieldGoal
-          }
-        /> */}
-      {/* </div> */}
+
+      {/* Display the rewards */}
       <div className="rewards">
         <div className="rewards-item-images">
-          {!rewardItem?.rewardDTOList?.length ? (
-            <img src={rewGet("beansbag")} />
+          {/* If there are no rewards, display a default image */}
+          {rewardItem?.rewardDTOList?.length === 0 ? (
+            <img src={rewGet("beansbag")} alt="Default Reward" />
           ) : (
-            rewardItem?.rewardDTOList?.map((item) => {
-              return<>
-              <img src={rewGet(item.desc)} />
-              <p className="text">{item.count}<span>&nbsp;</span>{item.desc}</p>
-              </>
-})
+            // Otherwise, display the rewards with their descriptions and counts
+            rewardItem.rewardDTOList.map((item, index) => (
+              <div key={index} className="reward-item">
+                <img src={rewGet(item.desc)} alt={item.desc} />
+                <p className="text">
+                  {item.count}
+                  <span>&nbsp;</span>
+                  {item.desc}
+                </p>
+              </div>
+            ))
           )}
         </div>
-        
-        
-          {/* {rewardItem?.rewardType == "1" &&
-            `${rewardItem?.beans} beans`}
-
-          {rewardItem?.rewardType == "1" &&
-            `${rewardItem?.rewardDTOList[0]?.count} ${
-              rewardItem?.rewardDTOList[0]?.count > 1
-                ? "days"
-                : "day"
-            }  ${rewardItem?.rewardDTOList[0]?.desc}`}
-
-          {rewardItem?.rewardType == "1" &&
-            rewardItem?.rewardDTOList?.length > 0 &&
-            `${rewardItem?.rewardDTOList[0]?.count}  ${
-              rewardItem?.rewardDTOList[0]?.count > 1
-                ? "days"
-                : "day"
-            }   ${
-              rewardItem?.rewardDTOList[0]?.desc
-            } and ${rewardItem?.rewardDTOList[1]?.count} 
-            
-            ${
-              rewardItem?.rewardDTOList[1]?.count > 1
-                ? "days"
-                : "day"
-            }
-              ${rewardItem?.rewardDTOList[1]?.desc}`}
-
-          {rewardItem?.rewardType == "1" &&
-            rewardItem?.beans > 0 &&
-            `${rewardItem?.beans} beans`} */}
-        {/* </p> */}
       </div>
     </div>
   );
