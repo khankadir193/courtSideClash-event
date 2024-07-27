@@ -8,8 +8,6 @@ import beans from "../assests/bean.png";
 
 const TickerTape = () => {
     const { marqueeData } = useApi();
-    // console.log('marqueeData....',marqueeData);
-
     return (
         <div className="gameMarquee">
             <Marquee speed={70}>

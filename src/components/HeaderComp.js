@@ -32,24 +32,9 @@ const HeaderComp = () => {
       {/* <TickerTape /> */}
       <div className='Header'>
         <LangDropDownComp />
-        <TickerTape />
-        {/* chances section */}
-        {/* <div className='chance-container'>
-          <div className='throws-left'>
-            <span>Throw Left :</span>
-            <span>99</span>
-          </div>
-          <div className='chances'>
-            <span>Chances :</span>
-            <input type='number' max="999" placeholder='TYPE HERE' />
-          </div>
-        </div> */}
-
+        <TickerTape /> 
         <GameComp />
-
-
         {/* <LangDropDownComp /> */}
-
         <div className="infoAndRewards">
           <div>
             <button className='guideBtn' onClick={toggleGuide}>

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, {useEffect, useState } from "react";
 import ibBtn from "../assests/INfo-icon2.png";
 import iaBtn from "../assests/Info-icon1.png";
 import currentPos from "../assests/current-position.gif";
@@ -6,11 +6,7 @@ import completed from "../assests/completed.png";
 import unknowUser from "../assests/default.png";
 // import beans from "../../assets/images/bean.png";
 import "../Style/fieldGoal.css";
-// import { AppContext } from "../../App";
 import { useApi } from "../ApiCall/AppContext";
-// import PopUp from "../../components/PopUp";
-// import SuccessAttemptPopUp from "../../popups/SuccessAttemptPopUp";
-// import MilestonePopUp from "../../popups/MilestonePopUp";
 import Marquee from "react-fast-marquee";
 import { baseUrl } from "../ApiCall/ApiComp";
 import Timer from "./Timer";
@@ -18,10 +14,6 @@ import TabComponent from "./TabComponent";
 import SuccessAttemptPopUp from "../popup/SuccessAttemptPopUp";
 import MilestonePopUp from "../popup/MilestonePopUp";
 import PopUp from "../popup/Popup";
-// import userBtn from "../../assets/images/usersBtn.png";
-// import talentBtn from "../../assets/images/talentBtn.png";
-// import UserSection from "./UserSection";
-// import TalentSection from "./TalentSection";
 export const FieldGoalMilestone = () => {
   let [targetTimestamp , setTargetTimestamp] = React.useState();
   const { milesStoneMarquee } = useApi();
