@@ -19,7 +19,7 @@
 .guide-modal {
   background: white;
   width: 95%;
-  max-width: 500px;
+  max-width: 95vw;
   min-height: 400px;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -31,7 +31,7 @@
 .guide-header {
   width: 80%;
   display: flex;
-  margin-top: -3.25rem;
+  margin-top: -12vw;
   justify-content: center;
   position: absolute;
   left: 12%;
@@ -41,7 +41,7 @@
 .guide-header img {
   width: 100%;
 }
-.guide-content{
+.guide-content {
   overflow-y: auto;
   height: 110vw;
   position: relative;
@@ -49,15 +49,15 @@
 }
 .guide-content .event-gifts {
   background: url("../assests/Rewards-bg.png") center / 100% 100% no-repeat;
-  height: 15rem;
+  height: 55vw;
   width: 95%;
   margin: auto;
   position: relative;
 }
 .guide-close-button {
-  width: 3rem;
-  height: 3rem;
-  margin-top: 1rem;
+  width: 12vw;
+  height: 12vw;
+  margin-top: 5vw;
 }
 .guide-close-button img {
   width: 100%;
@@ -66,8 +66,8 @@
 
 .gifts {
   background: url("../assests/gifts.png") center / 100% 100% no-repeat;
-  padding: 4rem 0;
-  margin-top: -3.5rem;
+  padding: 17vw 0;
+  margin-top: -12vw;
   width: 100%;
   position: relative;
 }
@@ -79,39 +79,39 @@
 }
 .event-gifts .title {
   color: #fff;
-  font-size: 1rem;
-  margin-top: 0.5rem;
+  font-size: 4vw;
+  margin-top: 1vw;
   font-weight: 700;
   text-transform: uppercase;
 }
 .event-gifts .gift1 {
   position: absolute;
   left: 3vw;
-  top: 5rem;
-  width: 27vw;
+  top: 20vw;
+  width: 28vw;
 }
 .event-gifts .gift2 {
-  left: 7rem;
+  left: 25vw;
   position: absolute;
-  top: 3rem;
-  width: 10rem;
+  top: 10vw;
+  width: 39vw;
 }
 .event-gifts .gift3 {
-  right: 1.5rem;
+  right: 7vw;
   position: absolute;
-  top: 5rem;
-  width: 7.5rem;
+  top: 18vw;
+  width: 30vw;
 }
 
 .gift1Detail {
   color: rgb(100, 104, 107);
   position: absolute;
-  width: 3rem;
-  height: 5rem;
-  top: 13rem;
+  width: 10vw;
+  height: 10vw;
+  top: 50vw;
   z-index: 89;
-  left: 3.25rem;
-  font-size: 0.75rem;
+  left: 12vw;
+  font-size: 2.75vw;
   font-weight: 700;
 }
 
@@ -119,20 +119,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 2rem;
+  margin-left: 6vw;
 }
 
 .gift1Detail div img {
-  width: 1.5rem;
+  width: 4vw;
+  margin-top: 1vw;
 }
 
 .gift2Detail {
   color: rgb(100, 104, 107);
   position: absolute;
-  width: 3rem;
-  height: 5rem;
-  top: 12.5rem;
-  left: 9rem;
+  width: 20vw;
+  height: 10vw;
+  top: 48vw;
+  left: 34vw;
   font-weight: 600;
   z-index: 89;
 }
@@ -141,21 +142,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 3rem;
+  margin-left: 0.5vw;
 }
 
 .gift2Detail div img {
-  width: 1.5rem;
+  width: 5.5vw;
 }
 
 .gift3Detail {
-  width: 2rem;
-  height: 3rem;
+  width: 8vw;
+  height: 10vw;
   position: absolute;
-  top: 13rem;
-  left: 17rem;
+  top: 50vw;
+  left: 61vw;
   z-index: 99;
-  font-size: 0.75rem;
+  font-size: 2.5vw;
   color: rgb(100, 104, 107);
   font-weight: 700;
 }
@@ -164,10 +165,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 1.25rem;
+  margin-left: 4vw;
 }
 .gift3Detail div img {
-  width: 1rem;
+  width: 3.5vw;
+  margin-top: 0.5vw;
 }
 
 /* ---- Guide content styling ---- */
@@ -176,14 +178,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 4rem;
-  height: 3.5rem;
+  gap: 15vw;
+  height: 12vw;
 }
 
 .howtoPlay,
 .rewardInfo {
   width: 35%;
-  height: 2rem;
+  height: 8vw;
   position: relative;
 }
 
@@ -196,13 +198,13 @@
 .howtoPlay span {
   position: absolute;
   color: #fff;
-  transform: translate(1.65rem, 0.45rem);
+  transform: translate(6vw, 2vw);
 }
 
 .rewardInfo span {
   position: absolute;
   color: #fff;
-  transform: translate(1.65rem, 0.45rem);
+  transform: translate(6vw,2vw);
 }
 
 .opacity-100 {
@@ -214,8 +216,7 @@
 
 .Tabcontent {
   background: url("../assests/content-bg.png") center / 100% 100% no-repeat;
-  height: 76vw;
-  height: 76vw;
+  height: 82vw;
   line-height: 4vw;
   margin: 2vw auto 0;
   overflow-y: auto;

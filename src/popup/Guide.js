@@ -43,7 +43,7 @@ const Guide = ({ onClose }) => {
           <img src={guideHeader} alt="guideHeader" />
         </div>
         <div className="guide-content">
-          <div style={{ margin: "45px 0 0 0" }}>
+          <div style={{ margin: "20vw 0 0 0" }}>
             <div className="event-gifts">
               <span className="title">Event Gifts</span>
 
