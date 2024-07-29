@@ -11,8 +11,8 @@ import beans from "../assests/bean.png";
 import giftBasketBall from "../assests/gift-basketball.gif";
 
 const GuideComp = (props) => {
-  const { selectedLanguage } = props;
-  const { toggleGuide } = useApi();
+  const { selectedLanguage,toggleGuide } = props;
+  // const { toggleGuide } = useApi();
   const [tabs, setTabs] = useState({
     howToPlay: true,
     rewardsInfo: false,

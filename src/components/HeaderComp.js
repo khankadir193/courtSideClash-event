@@ -52,7 +52,7 @@ const HeaderComp = () => {
 
         </div>
 
-        {showGuide && <GuideComp onClose={closeGuide} />} {/* Conditionally render the Guide component */}
+        {showGuide && <GuideComp toggleGuide={toggleGuide} />} {/* Conditionally render the Guide component */}
         {showRewardHistory ? <RewardHistory toggleRewardsHistory={toggleRewardsHistory} rewardHistory={rewardHistory} /> : ""}
       </div>
     </>
