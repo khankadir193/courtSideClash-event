@@ -15,6 +15,7 @@ const HeaderComp = () => {
   const [isDisabled, setIsDisabled] = useState(false);
   const [showRewardHistory, setShowRewardHistory] = useState(0);
   const [rewardHistory, setRewardHistory] = useState([]);
+  const [selectedLanguage, setSelectedLanguage] = useState(0);
 
   const toggleGuide = () => {
     setShowGuide(!showGuide);
@@ -28,11 +29,15 @@ const HeaderComp = () => {
     setShowRewardHistory(0);
   };
 
+  const changeLanguage = (ind)=>{
+    setSelectedLanguage(ind);
+  }
+
   return (
     <>
       {/* <TickerTape /> */}
       <div className='Header'>
-        <LangDropDownComp />
+        <LangDropDownComp changeLanguage={changeLanguage} />
         <TickerTape /> 
         <GameComp />
         {/* <LangDropDownComp /> */}
@@ -52,7 +57,7 @@ const HeaderComp = () => {
 
         </div>
 
-        {showGuide && <GuideComp toggleGuide={toggleGuide} />} {/* Conditionally render the Guide component */}
+        {showGuide && <GuideComp toggleGuide={toggleGuide} selectedLanguage={selectedLanguage} />} {/* Conditionally render the Guide component */}
         {showRewardHistory ? <RewardHistory toggleRewardsHistory={toggleRewardsHistory} rewardHistory={rewardHistory} /> : ""}
       </div>
     </>
