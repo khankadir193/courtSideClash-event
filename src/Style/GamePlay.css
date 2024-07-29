@@ -148,8 +148,9 @@
 }
 .playing-character {
   position: absolute;
-  width: 97%;
-  top: 12vw;
+  width: 100%;
+  right: 0vw;
+  padding: 0 2vw;
 }
 /* .App .main-tabs {
   display: flex;

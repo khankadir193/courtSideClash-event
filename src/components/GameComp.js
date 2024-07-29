@@ -73,9 +73,10 @@ const GameComp = () => {
                 <img
                     src={allRewards[inputValue > 1 ? 2 : rewardWon]}
                     className="playing-character"
+                    alt='gif'
                 />
             ) : (
-                <img src={foreverHeader} className="playing-character" />
+                <img src={foreverHeader} className="playing-character" alt='header-gif'/>
             )}
 
             <div id="extraContent"></div>
