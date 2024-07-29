@@ -1,13 +1,9 @@
 import React from 'react';
 import './App.css';
 import HeaderComp from './components/HeaderComp';
-import UserComp from './components/UserComp';
-import TabComponent from './components/TabComponent';
 import AppContext from './ApiCall/AppContext';
 import { FieldGoalMilestone } from './components/FieldGoalMilestone';
-import TickerTape from './components/TickerTape';
 import ScrollToTopButton from './components/ScrollToTop';
-// const { getTalentWeeklyPrev,lbData } = useApi();
 
 
 function App() {
