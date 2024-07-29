@@ -1,17 +1,18 @@
-import React, { useContext, useState } from "react";
-import "../Style/Guide.css";
-import PopUp from "..";
+import React, { useState } from "react";
+import "../popup/Guide.css";
+import PopUp from "../popup/Popup.js";
 import guidBg from "../assests/guide-bg.png";
-import titleBanner from "../assests/Guide bannr.png";
-import Accordion from "../components/Accordion";
-import { AppContext } from "../App";
-import { baseUrl } from "../api";
-import beans from "../assets/images/bean.png";
-import giftBasketBall from "../assets/images/gift-display-basket-ball.gif";
+import titleBanner from "../assests/Guide-banner.png";
+import Accordion from "../popup/Accordion.js";
+// import { AppContext } from "../App";
+import { useApi } from "../ApiCall/AppContext.js";
+import { baseUrl } from "../ApiCall/ApiComp.js";
+import beans from "../assests/bean.png";
+import giftBasketBall from "../assests/gift-basketball.gif";
 
 const GuideComp = (props) => {
   const { selectedLanguage } = props;
-  const { toggleGuide } = useContext(AppContext);
+  const { toggleGuide } = useApi();
   const [tabs, setTabs] = useState({
     howToPlay: true,
     rewardsInfo: false,

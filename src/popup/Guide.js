@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Guide.css";
 import RewardInfo from "../popup/RewardInfo";
-import guideHeader from "../assests/Guide bannr.png";
+import guideHeader from "../assests/Guide-banner.png";
 import howToPlay from "../assests/howToPlay.png";
 import rewardInfoTab from "../assests/rewardInfo.png";
 import basketball from "../assests/gift-basketball.gif";
