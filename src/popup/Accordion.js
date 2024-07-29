@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../Style/accordion.css";
-import rewardsSliderBg from "../assests/Rewards-base.png"; // need to change  according to reward-base
+import rewardsSliderBg from "../assests/user-talent.png"; // need to change  according to reward-base
 import { ButtonSlider } from "../components/ButtonSlider";
 
 function Accordion(props) {
