@@ -1,0 +1,230 @@
+.accordion {
+  width: 99%;
+  font-family: "Helvetica";
+  border-radius: 20vw;
+  padding: 0 2vw 0 2vw;
+  margin-bottom: 5vw;
+}
+
+.accordion .accordion-header {
+  height: 5vw;
+}
+
+.accordion .accordion-header .accordion-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 5vw;
+  background-image: url("../assests/Guide-green-btn.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  border-radius: 20vw;
+  padding: 0 2vw 0 2vw;
+}
+
+.accordion .accordion-header .accordion-title .chevron {
+  font-size: 6vw;
+}
+
+.accordion .accordion-header .accordion-title .down-chevron {
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid white;
+}
+
+.accordion .accordion-header .accordion-title .right-chevron {
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 6px solid white;
+}
+
+/* .accordion .accordion-body .accordion-tabs {
+  width: 32vw;
+  height: 8vw;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  margin: 0.4vw auto 0;
+  display: flex;
+  background-image: url("../assets//images/slide-button-bg-today-yesterday.png");
+} */
+
+.accordion .accordion-body .accordion-tabs .sliderBtn {
+  width: 17vw;
+  height: 7vw;
+  background-image: url('../assests/current-previous-btn.png');
+
+  /* background-image: url("../assets/images/slide-button.png"); */
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-color: transparent;
+  border: none;
+  font-family: "HiJack";
+  font-weight: bold;
+}
+
+.accordion .accordion-body .accordion-tabs .sliderBtn img {
+  width: 16vw;
+}
+
+.accordion .accordion-body .userContent .beanBag {
+  display: flex;
+  justify-content: center;
+}
+
+.accordion .accordion-body .userContent .beanBag img {
+  width: 18vw;
+}
+
+.accordion .accordion-body .userContent p {
+  font-family: "Helvetica";
+  text-align: center;
+}
+
+.accordion .accordion-body .userContent table {
+  border: 1px solid;
+  width: 100%;
+  border-radius: 3vw;
+  text-align: center;
+  margin-top: 3vw;
+}
+
+.accordion .accordion-body .userContent table td {
+  border-bottom: 1px solid;
+  padding: 2vw;
+}
+
+.accordion .accordion-body .userContent table td.last {
+  border-bottom: none;
+}
+
+.accordion .accordion-body .userContent table td.colored {
+  color: #fcf907;
+}
+
+.accordion .accordion-body .talentContent .beanBag {
+  display: flex;
+  justify-content: center;
+}
+
+.accordion .accordion-body .talentContent .beanBag img {
+  width: 18vw;
+}
+
+.accordion .accordion-body .talentContent p {
+  font-family: "Helvetica";
+  text-align: center;
+  margin-top: 2vw;
+}
+
+.accordion .accordion-body .talentContent .bullets {
+  line-height: 3vw;
+}
+
+.accordion .accordion-body .talentContent table {
+  border: 1px solid;
+  width: 100%;
+  border-radius: 3vw;
+  text-align: center;
+  margin-top: 3vw;
+}
+
+.accordion .accordion-body .talentContent table td {
+  border-bottom: 1px solid;
+  padding: 2vw;
+}
+
+.accordion .accordion-body .talentContent table td.last {
+  border-bottom: none;
+}
+
+.accordion .accordion-body .talentContent table td.colored {
+  color: #fcf907;
+}
+
+.accordion .accordion-body .talentContent .lastTable {
+  border-collapse: collapse;
+}
+
+.accordion .accordion-body .talentContent .lastTable tr,
+.accordion .accordion-body .talentContent .lastTable td,
+.accordion .accordion-body .talentContent .lastTable th {
+  border: 1px solid;
+  border-radius: 3vw;
+}
+
+.accordion .accordion-body .talentContent .lastTable th {
+  padding: 1vw;
+}
+
+.accordion .accordion-body .talentContent .rewardImages {
+  display: flex;
+  flex-direction: revert;
+  justify-content: center;
+  align-items: center;
+  gap: 2vw;
+  margin-top: 1vw;
+}
+
+.accordion .accordion-body .talentContent .rewardImages img {
+  width: 20vw;
+}
+
+.accordion .accordion-body .fieldGoalContent .beanBag {
+  display: flex;
+  justify-content: center;
+  margin: 1vw;
+}
+
+.accordion .accordion-body .fieldGoalContent .beanBag img {
+  width: 22vw;
+}
+
+.accordion .accordion-body .fieldGoalContent p {
+  font-family: "Helvetica";
+  text-align: center;
+  margin-top: 2vw;
+}
+
+.accordion .accordion-body .fieldGoalContent .bullets {
+  line-height: 3vw;
+  margin-top: 2vw;
+}
+
+.accordion .accordion-body .fieldGoalContent .rewardImg {
+  width: 11vw;
+}
+
+.accordion .accordion-body .fieldGoalContent table {
+  border: 1px solid;
+  width: 100%;
+  text-align: center;
+  margin-top: 3vw;
+  border-collapse: collapse;
+}
+
+.accordion .accordion-body .fieldGoalContent table td:nth-child(3) {
+  border-left: none;
+}
+
+.accordion .accordion-body .fieldGoalContent table td:nth-child(2) {
+  border-right: none;
+}
+
+.accordion .accordion-body .fieldGoalContent table td,
+.accordion .accordion-body .fieldGoalContent table th {
+  border: 1px solid;
+  padding: 2vw;
+  border-radius: 2vw;
+}
+
+.accordion .accordion-body .fieldGoalContent table td.last {
+  border-bottom: none;
+}
+
+.accordion .accordion-body .fieldGoalContent table td.colored {
+  color: #fcf907;
+}

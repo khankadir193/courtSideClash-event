@@ -6,6 +6,7 @@ import Guide from '../popup/Guide';  // Import the Guide component
 import TickerTape from './TickerTape';
 import GameComp from './GameComp';
 import { RewardHistory } from '../popup/RewardHistory';
+import GuideComp from './GuideComp';
 
 
 
@@ -51,7 +52,7 @@ const HeaderComp = () => {
 
         </div>
 
-        {showGuide && <Guide onClose={closeGuide} />} {/* Conditionally render the Guide component */}
+        {showGuide && <GuideComp toggleGuide={toggleGuide} />} {/* Conditionally render the Guide component */}
         {showRewardHistory ? <RewardHistory toggleRewardsHistory={toggleRewardsHistory} rewardHistory={rewardHistory} /> : ""}
       </div>
     </>
