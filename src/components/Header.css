@@ -132,4 +132,21 @@ button img {
 
 .infoAndRewards .rewardBtn {
   background-image: url('../assests/reward-history-button.gif');
+  margin-right: 2rem;
+}
+
+.overlay .rewardHistoryPopUp .rewardsTitle {
+    display: grid;
+    font-size: 3vw;
+    grid-template-columns: 50% 50%;
+    margin: auto auto 2vw;
+    text-align: center;
+    width: 85%;
+}
+
+.overlay .rewardHistoryPopUp .noData {
+    color: #ff0;
+    font-family: HiJack;
+    margin-top: 19vw;
+    text-align: center;
 }
