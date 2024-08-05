@@ -1,6 +1,7 @@
-*{
+* {
   color: white;
 }
+
 .lb-comp {
   background-image: url('../assests/Leaderboard-bg.png');
   width: 95%;
@@ -22,26 +23,27 @@
 }
 
 .lb-comp .col-two {
-    grid-gap: 14%;
-    display: grid;
-    font-size: 2.5vw;
-    gap: 14%;
-    grid-template-columns: 43% 43%;
-    margin: auto;
-    text-align: center;
-    width: 90%;
+  grid-gap: 14%;
+  display: grid;
+  font-size: 2.5vw;
+  gap: 14%;
+  grid-template-columns: 43% 43%;
+  margin: auto;
+  text-align: center;
+  width: 90%;
 }
 
- .lb-comp .col-two>div>p {
-    background-color: #422a397d;
-    border-radius: 15px;
-    margin: auto;
-    padding: 1.3vw 0 1vw;
-    width: 60%;
-    color: white;
-    box-sizing: border-box;
-    font-weight: bold;
+.lb-comp .col-two>div>p {
+  background-color: #422a397d;
+  border-radius: 15px;
+  margin: auto;
+  padding: 1.3vw 0 1vw;
+  width: 60%;
+  color: white;
+  box-sizing: border-box;
+  font-weight: bold;
 }
+
 /* 
 .lb-comp .talentLb-item .left-div .user-images .frame {
     position: absolute;
@@ -74,21 +76,28 @@
 
 .lb-comp .talentLb-item .left-div {
   .index {
-    position: relative;
+    /* position: relative;
     top: 12vw;
     left: 1vw;
+    font-size: 2vw; */
+    position: relative;
+    top: 11vw;
+    left: -8vw;
     font-size: 2vw;
   }
+
   .user-images {
     position: relative;
     top: -4vw;
   }
+
   .user-images .frame {
     position: absolute;
     width: 17vw;
     z-index: 1;
     left: 1vw;
   }
+
   .user-images .user-img {
     position: absolute;
     width: 10vw;
@@ -96,6 +105,7 @@
     top: 4vw;
     border-radius: 50%;
   }
+
   .nameNLevel {
     position: relative;
     left: 17vw;
@@ -103,9 +113,11 @@
     flex-direction: column;
     top: 2vw;
   }
+
   .nameNLevel img {
     width: 13vw;
   }
+
   .nameNLevel .name {
     font-size: 3vw;
     color: black;
@@ -122,27 +134,33 @@
     top: 3vw;
     left: -3vw;
   }
+
   .teams-area .team-user {
     position: relative;
   }
+
   .teams-area .team-user .team-frame {
     width: 8vw;
     position: absolute;
     z-index: 1;
   }
+
   .teams-area .team-user .user-portrait {
     width: 8vw;
     position: absolute;
     border-radius: 50%;
   }
+
   .teams-area .index-1 {
     position: relative;
     left: -9vw;
   }
+
   .teams-area .index-2 {
     left: -4vw;
     z-index: 1;
   }
+
   .teams-area .index-3 {
     left: 1vw;
   }
@@ -196,5 +214,5 @@
 }
 
 .scroll {
-    overflow-y: scroll !important;
+  overflow-y: scroll !important;
 }
