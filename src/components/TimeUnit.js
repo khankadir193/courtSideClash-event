@@ -1,14 +1,15 @@
 import React from "react";
 
-const TimeUnit = ({ unit, value }) => {
-  return (
-    <div className="time-unit">
-      <div className="value">
+const TimeUnit = ({ unit, value }) => (
+  <div className="time-unit">
+    <div className="value">
+      <React.Fragment>
         <span>{value}</span>
         <span>{unit}</span>
-      </div>
+      </React.Fragment>
     </div>
-  );
-};
+  </div>
+);
+
 
 export default TimeUnit;
