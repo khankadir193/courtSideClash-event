@@ -1,38 +1,48 @@
 import React, { useEffect, useState } from "react";
 import "../Style/accordion.css";
-import rewardsSliderBg from "../assests/user-talent.png"; // need to change  according to reward-base
+import rewardsSliderBg from "../assests/user-talent.png"; // Consider parameterizing this if it changes based on reward-base
 import { ButtonSlider } from "../components/ButtonSlider";
 
-function Accordion(props) {
-  const { toggleUserTalent, hasTabs, defaultOpen, userTalent } = props;
+function Accordion({
+  title,             // Destructured props for cleaner code
+  children,
+  toggleUserTalent,
+  hasTabs,
+  defaultOpen,
+  userTalent
+}) {
+  // State for tracking whether the accordion is open or closed
   const [isOpen, setIsOpen] = useState(defaultOpen);
 
-  function handleToggle() {
-    setIsOpen(!isOpen);
-  }
+  // Toggles the accordion open/closed state
+  const handleToggle = () => setIsOpen(prevState => !prevState);
 
   return (
     <div className="accordion">
+      {/* Accordion header toggles the body visibility */}
       <div className="accordion-header" onClick={handleToggle}>
         <div className="accordion-title">
-          <span>{props.title}</span>
+          <span>{title}</span>
+          {/* Icon changes based on accordion state */}
           <span className={isOpen ? "down-chevron" : "right-chevron"}></span>
         </div>
       </div>
+
+      {/* Conditional rendering of the accordion body based on isOpen state */}
       {isOpen && (
         <div className="accordion-body">
-          {hasTabs ? (
-            <div>
-              <ButtonSlider
-                onToggle={toggleUserTalent}
-                bg={rewardsSliderBg}
-                texts={["Users", "Talents"]}
-                isTalent={userTalent.talent}
-              />
-            </div>
-          ) : null}
+          {/* Conditionally render the ButtonSlider if hasTabs is true */}
+          {hasTabs && (
+            <ButtonSlider
+              onToggle={toggleUserTalent}
+              bg={rewardsSliderBg} // Background image passed to ButtonSlider
+              texts={["Users", "Talents"]} // Static texts, could be parameterized if needed
+              isTalent={userTalent.talent} // Condition to determine current view
+            />
+          )}
 
-          {props.children}
+          {/* Render any child elements passed to the Accordion */}
+          {children}
         </div>
       )}
     </div>
